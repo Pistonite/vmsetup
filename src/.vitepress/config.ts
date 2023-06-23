@@ -41,7 +41,18 @@ export default defineConfig({
       },{
         text: "Tooling",
         items: [
+          { text: "Bash", link: "/tool/bash" },
+          { text: "Yay", link: "/tool/yay" },
           { text: "Rust", link: "/tool/rust" },
+          { text: "Starship", link: "/tool/starship" },
+          { text: "Zoxide", link: "/tool/zoxide" },
+          { text: "Zellij", link: "/tool/zellij" },
+          { text: "Oxidize", link: "/tool/cargo-stuff" },
+        ]
+      },{
+        text: "Language Support",
+        items: [
+          { text: "NeoVim", link: "/editor/neovim" },
         ]
       }
     ],
