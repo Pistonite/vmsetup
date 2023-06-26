@@ -6,13 +6,13 @@ The default keyboard layout is US. If you need something else, see https://wiki.
 
 ## Verify the boot mode
 This command should run without error
-```
+```bash
 ls /sys/firmware/efi/efivars
 ```
 
 ## Verify time
 Run
-```
+```bash
 timedatectl
 ```
 Make sure the `Universal time` is correct

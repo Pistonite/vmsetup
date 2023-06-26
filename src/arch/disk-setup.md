@@ -19,19 +19,38 @@ We will have:
 2. 8GB for the swap partition
 3. The rest for the root partition
 
-Run `parted -a optimal /dev/sda`. Replace `/dev/sda` with the disk you want to partition. Then do this:
-1. `mklabel gpt` to create a GPT partition table
-2. `mkpart primary fat32 0% 1GiB` to create the EFI partition
-3. `set 1 esp on` to set the EFI partition as the EFI System Partition
-4. `mkpart primary 1GiB 9GiB` to create the swap partition of 8GiB (9-1=8)
-5. `mkpart primary 9GiB 100%` to create the root partition
+Run the following to enter `parted`. Replace `/dev/sda` with the disk you want to partition.
+```bash
+parted -a optimal /dev/sda
+```
+Then do this:
+1. Create a GPT partition table
+    ```
+    mklabel gpt
+    ```
+2. Create a partition for EFI
+    ```
+    mkpart primary fat32 0% 1GiB
+    ```
+3. Set it as the EFI System Partition
+    ```
+    set 1 esp on
+    ```
+4. Create the swap partition of 8GiB (9-1=8)
+    ```
+    mkpart primary 1GiB 9GiB
+    ```
+5. Create the root partition
+    ```
+    mkpart primary 9GiB 100%
+    ```
 6. `print` to make sure everything is OK
-```
-Number  Start   End     Size    File system  Name     Flags
- 1      1049kB  1074MB  1073MB  fat32        primary  boot, esp
- 2      1074MB  9664MB  8590MB               primary
- 3      9664MB  275GB   265GB                primary
-```
+    ```
+    Number  Start   End     Size    File system  Name     Flags
+    1      1049kB  1074MB  1073MB  fat32        primary  boot, esp
+    2      1074MB  9664MB  8590MB               primary
+    3      9664MB  275GB   265GB                primary
+    ```
 7. `quit` to exit parted
 
 ## Format the partitions
@@ -47,12 +66,21 @@ Device        Start       End   Sectors  Size Type
 ```
 
 Then run
-1. `mkfs.vfat -F32 /dev/sda1` to format the EFI partition
+1. Format the EFI partition
+    ```bash
+    mkfs.vfat -F32 /dev/sda1
+    ```
 :::tip
 The difference between `vfat` and `fat` is that `vfat` supports longer file names. Read more here: https://en.wikipedia.org/wiki/File_Allocation_Table. You can also run `mkfs.fat` though.
 :::
-2. `mkswap -L "swap" /dev/sda2` to format the swap partition and label it `swap`
-3. `mkfs.ext4 -L "root" /dev/sda3` to format the root partition and label it `root`
+2. Format the swap partition and label it `swap`
+    ```bash
+    mkswap -L swap /dev/sda2
+    ```
+3. Format the root partition and label it `root`
+    ```bash
+    mkfs.ext4 -L root /dev/sda3
+    ```
 :::tip
 Formatting the root partition might be a bit slower than the other partitions
 :::

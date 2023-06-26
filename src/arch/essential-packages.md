@@ -5,12 +5,18 @@ This is 2.1-2.2 of https://wiki.archlinux.org/title/Installation_guide
 The mirrors are usually set up correctly by default. If you want to change them, see https://wiki.archlinux.org/title/Installation_guide#Select_the_mirrors
 
 ## Install essential packages
-Run `pacstrap` to install the base packages like this
+Run `pacstrap` to install the base packages. The command below shows my list of packages. You can add or remove as you like.
+### For AMD CPU:
 ```
-pacstrap -K /mnt base base-devel ......
+pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
 ```
 
-Here's my list of essential packages. You can install more later.
+### For Intel CPU:
+```
+pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
+```
+
+### Details
 
 | Package | Description |
 |-|-|
@@ -22,7 +28,9 @@ Here's my list of essential packages. You can install more later.
 |`dkms`|Dynamic Kernel Module Support. In case you have kernel modules that need to be recompiled when the kernel is updated|
 |`amd-ucode` or `intel-ucode`|Microcode for AMD or Intel CPUs. See https://wiki.archlinux.org/title/Microcode for more info|
 |`git`|Version control system. You probably need this|
+|`cmake`|Build system. Need this for some of the tools we install later|
 |`neovim`|Text editor we will use in the headless environment|
+|`fzf`|Fuzzy finder|
 |`htop`|Like `top` or task manager|
 |`lsof`|Shows what files are opened by what process|
 |`openssh`|SSH server|
@@ -36,12 +44,3 @@ Here's my list of essential packages. You can install more later.
 There's no shell because `bash` is included in `base`. If you prefer another shell like `zsh`, include it
 :::
 
-For AMD CPU:
-```
-pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git neovim htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
-```
-
-For Intel CPU:
-```
-pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git neovim htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
-```
