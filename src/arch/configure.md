@@ -3,50 +3,54 @@ This is 3.1-3.7 from https://wiki.archlinux.org/title/Installation_guide
 
 ## Fstab
 Run
-```
+```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ## Chroot to system
 This will change the root from the live environment to the system we just installed
-```
+```bash
 arch-chroot /mnt
 ```
 
 ## Set time zone
-Run this to list all time zone regions
+Run the following to set the time zone. Replace `US/Pacific` with your time zone
+```bash
+ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
 ```
+:::tip
+If you don't know what time zones are available, run this to list all time zone regions
+```bash
 ls /usr/share/zoneinfo
 ```
-
 Select the region, the run
-```
+```bash
 ls /usr/share/zoneinfo/<Region>
 ```
-
-to see available time zones in that region. Select the time zone you want, then run
-```
-ln -sf /usr/share/zoneinfo/<Region>/<Zone> /etc/localtime
-```
+:::
 
 Then run this to generate `/etc/adjtime`
-```
+```bash
 hwclock --systohc
 ```
 
 ## Localization
-Edit `/etc/locale.gen` with `nvim /etc/local.gen` and uncomment `en_US.UTF-8 UTF-8`.
+Edit `/etc/locale.gen`
+```bash
+nvim /etc/local.gen
+```
+Uncomment the line with `en_US.UTF-8 UTF-8`.
 
 Since this is a headless environment. I only need this locale. Uncomment other locales if you need
 
 Run this to generate the locales
-```
+```bash
 local-gen
 ```
 
-Then edit `/etc/locale.conf` with `nvim /etc/locale.conf` and add this line
-```
-LANG=en_US.UTF-8
+Then config the locale with 
+```bash
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
 If you changed keyboard layout, edit `/etc/vconsole.conf` with `nvim /etc/vconsole.conf` and add this line (see https://wiki.archlinux.org/title/Installation_guide#Localization)
@@ -55,26 +59,26 @@ KEYMAP=<Layout>
 ```
 
 ## Network
-Create the host name file with `nvim /etc/hostname` and add your host name (`pistonite` in my case)
-
-Or just 
+Create the host name file with the following, replace `pistonite` with the host name you want (i.e. name for your VM)
+```bash
+echo pistonite > /etc/hostname
 ```
-echo <Hostname> > /etc/hostname
-```
-
-Finally enable network manager with
-```
+Then enable network manager with
+```bash
 systemctl enable NetworkManager
 ```
 
 ## Initramfs
 Usually this should be optional but run this anyway
-```
+```bash
 mkinitcpio -P
 ```
 See https://wiki.archlinux.org/title/Installation_guide#Initramfs for more details
 
 ## Root password
-Set the root password now with `passwd`. This is the actual root password.
+Set the root password now. This is the actual root password.
+```bash
+passwd
+```
 
 Next we will set up the boot loader, which is the last setup in the OS installation.

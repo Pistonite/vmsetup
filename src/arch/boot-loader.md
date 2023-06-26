@@ -5,7 +5,7 @@ This page is partially adopted from https://wiki.archlinux.org/title/Systemd-boo
 
 ## Install Boot Loader
 First ensure the system is in UEFI mode with
-```
+```bash
 ls /sys/firmware/efi/efivars
 ```
 The command should not error.
@@ -13,7 +13,7 @@ The command should not error.
 Assuming you have been following this guide, the ESP mount point should be `/boot` (chrooted into the system i.e. `/mnt`)
 
 Install the boot loader with
-```
+```bash
 bootctl install
 ```
 :::tip
@@ -21,7 +21,11 @@ This will automatically search for `/efi`. `/boot` and `/boot/efi`. If you are u
 :::
 
 ## Configure Loader
-Create `/boot/loader/loader.conf` with the following content
+Create `/boot/loader/loader.conf` with
+```bash
+nvim /boot/loader/loader.conf
+```
+Paste in the following content
 ```
 default      arch.conf
 timeout      3
@@ -37,13 +41,24 @@ We have `editor yes` in case something goes wrong, we can edit the boot loader
 :::tip
 Change `timeout 3` to a longer timeout if you need longer to select in the boot menu
 :::
+Save with the following so parent directories are created if they don't exist
+```
+:w ++p
+```
 
-Also run `blkid /dev/sda3` to get the UUID of the root partition. We will need it later.
+Next run the following to get the UUID of the root partition. Copy it somewhere and we will need it later.
+```bash
+blkid /dev/sda3
+```
 
 Next we will add 2 loader entries for `arch` and `arch-lts`.
 
 ### arch
-Create `/boot/loader/entries/arch.conf` with the following content. Replace the UUID with the one you got from `blkid`
+Create `/boot/loader/entries/arch.conf`
+```bash
+nvim /boot/loader/loader.conf
+```
+Paste in the following content. Replace the UUID with the one you got from `blkid`
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
@@ -57,7 +72,7 @@ Replace `amd-ucode` with `intel-ucode` if you have intel CPU
 
 ### arch-lts
 Run this to clone the `arch` entry to `arch-lts`
-```
+```bash
 cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
 ```
 Edit `/boot/loader/entries/arch-lts.conf` and replace:
@@ -84,7 +99,7 @@ Exit the chroot environment by pressing `Ctrl+D` or running
 exit
 ```
 Then unmount all partitions
-```
+```bash
 umount -R /mnt
 ```
 Exit the SSH environment by pressing `Ctrl+D` or running
@@ -122,7 +137,7 @@ You should be able to login the same way as above.
 Now that we have confirmed both kernels can boot, we will disable editing the boot loader.
 
 Run
-```
+```bash
 nvim /boot/loader/loader.conf
 ```
 and change `editor yes` to `editor no`.

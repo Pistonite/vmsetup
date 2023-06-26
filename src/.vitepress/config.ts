@@ -20,7 +20,7 @@ export default defineConfig({
       {
         text: "Hyper-V Setup",
         items: [
-          { text: "Prerequisite", link: "/" },
+          { text: "Getting Started", link: "/" },
           { text: "Creating VM", link: "/hyperv/create" },
           { text: "Virtual Switch", link: "/hyperv/virtual-switch" },
           { text: "Configure VM", link: "/hyperv/configure" },
@@ -39,22 +39,19 @@ export default defineConfig({
           { text: "Conclusion", link: "/arch/conclusion" },
         ]
       },{
-        text: "Tooling",
+        text: "Install Stuff",
         items: [
-          { text: "Bash", link: "/tool/bash" },
-          { text: "Yay", link: "/tool/yay" },
-          { text: "Rust", link: "/tool/rust" },
-          { text: "Starship", link: "/tool/starship" },
-          { text: "Zoxide", link: "/tool/zoxide" },
-          { text: "Zellij", link: "/tool/zellij" },
-          { text: "Oxidize", link: "/tool/cargo-stuff" },
+          { text: "Basic Tools", link: "/tool/basic-tools" },
+          { text: "Version Switchers", link: "/tool/version-switcher" },
+          { text: "Configure Shell", link: "/tool/config" },
+          { text: "Docker" , link: "/tool/docker" },
+          { text: "Node", link: "/tool/node" },
+          { text: "Python", link: "/tool/python" },
+          { text: "Git", link: "/tool/git" },
+          { text: "Neovim", link: "/tool/nvim" },
+          { text: "TODO", link: "/tool/todo" },
         ]
-      },{
-        text: "Language Support",
-        items: [
-          { text: "NeoVim", link: "/editor/neovim" },
-        ]
-      }
+      },
     ],
 
     socialLinks: [

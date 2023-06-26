@@ -1,0 +1,39 @@
+# Configuring the shell
+We will configure `bash` and `starship` now to make the shell useable.
+
+## Directory setup
+I like to have 2 directories in my home directory: `dev` and `bin`.
+
+`dev` will be where I keep all the repos, and `bin` will be where I keep drop-in binary tools.
+
+```bash
+mkdir ~/dev ~/bin
+```
+
+## `.bashrc`
+You can download my `.bashrc` file with the following command
+```bash
+curl -o ~/.bashrc https://vmsetup.pistonite.org/home/.bashrc
+```
+
+Or, manually copy and paste the following to your `~/.bashrc`
+```bash
+TXTPP#include ../public/home/.bashrc
+```
+
+## `.config/starship.toml`
+Starship is the shell prompt. You can download my config with the following
+```bash
+mkdir ~/.config && curl -o ~/.config/starship.toml https://vmsetup.pistonite.org/home/.config/starship.toml
+```
+
+Or manually copy and paste the following to your `~/.config/starship.toml`
+```toml
+TXTPP#include ../public/home/.config/starship.toml
+```
+
+## Reload the shell
+Finally, reload the shell to apply the changes
+```bash
+source ~/.bashrc
+```

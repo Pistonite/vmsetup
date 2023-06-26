@@ -5,7 +5,7 @@ This page is partially adopted from https://wiki.archlinux.org/title/General_rec
 We will be adding a non-root user. The example uses `piston` as the name.
 
 Run
-```
+```bash
 useradd -m -G wheel -s /bin/bash piston
 ```
 :::tip
@@ -16,13 +16,13 @@ If you want to use a different shell, change the `-s` flag. The shell needs to b
 :::
 
 Then set the password for the new user with
-```
+```bash
 passwd piston
 ```
 
 ## Adding the `wheel` group to sudoer
 Run
-```
+```bash
 EDITOR=nvim visudo
 ```
 Search for `wheel` and uncomment this line
@@ -32,7 +32,7 @@ Search for `wheel` and uncomment this line
 
 ## Enabling SSH
 Run
-```
+```bash
 systemctl enable sshd
 systemctl start sshd
 ```

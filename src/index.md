@@ -1,4 +1,7 @@
-# Prerequisites
+# Welcome
+Welcome to the guide to setup an environment exactly like the one I use for programming. This guide will be updated in the future if I need to install something new.
+
+## Prerequisites
 
 Host machine environment this guide is tested on:
 - AMD Ryzen 9 5950X
