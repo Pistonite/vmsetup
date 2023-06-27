@@ -41,7 +41,12 @@ If you have GitHub Copilor, run the following to set it up
 ```
 Then follow on-screen instructions.
 
-You can use `:Copilor status` to check at anytime if it is enabled
+You can use `:Copilot status` to check at anytime if it is enabled
+
+## Yank to host clipboard
+Since the VM is headless, there's no clipboard provider to support the `+` register. So I made a simple python program [`ws-clipboard`](https://github.com/Pistonight/ws-clipboard) that starts a websocket server and stores whatever it receives into the clipboard.
+
+You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it over to the host.
 
 ## Key mappings
 Here are some of my key mappings. I use the default leader key.
@@ -58,6 +63,7 @@ Here are some of my key mappings. I use the default leader key.
 |`<C-W>-`|Decrease window height by 10|N/A|
 |`<leader>c`|Comment out line/selection|N/A|
 |`<leader>u`|Toggle undotree|undotree|
+|`<leader>y`|Yank selection to host|N/A|
 
 
 ### File switching

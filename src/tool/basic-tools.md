@@ -33,7 +33,7 @@ source ~/.cargo/env
 ## Oxidize
 Time to install more stuff with `cargo`. I will provide the configuration files later, so for now we can just install them.
 ```bash
-cargo install exa bat cargo-info cargo-watch just du-dust ripgrep fd-find starship zoxide
+cargo install exa bat cargo-info cargo-watch just du-dust ripgrep fd-find starship zoxide websocat
 ```
 Explaination of each package:
 
@@ -49,3 +49,4 @@ Explaination of each package:
 | `zoxide` | Directory jumper | https://github.com/ajeetdsouza/zoxide |
 | `ripgrep` | Search tool (telescope.nvim requires it) | https://github.com/BurntSushi/ripgrep |
 | `fd-find` | File find tool (telescope.nvim requires it) | https://github.com/sharkdp/fd |
+| `websocat` | Websocket client CLI | https://github.com/vi/websocat |

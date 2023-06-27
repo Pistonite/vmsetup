@@ -31,8 +31,8 @@ alias ls='exa'
 alias du='dust'
 alias cat='bat'
 alias grep='grep --color=auto'
-alias vi='nvim -p'
-alias vim='nvim -p'
+alias vi='nvim'
+alias vim='nvim'
 alias nvim='nvim -p'
 # shorthands
 alias c='z'    # zoxide path jumper (e.g "c <path>") zi for interactive
@@ -46,6 +46,7 @@ alias pacman='sudo pacman'
 # EXPORTS ======================================
 # default editor
 export EDITOR='nvim'
+export HOST_MACHINE_IP='192.168.0.218'
 
 # CARGO ========================================
 . "$HOME/.cargo/env"
@@ -69,6 +70,15 @@ eval "$(pyenv virtualenv-init -)"
 
 # HOME/BIN =====================================
 export PATH="$HOME/bin:$PATH"```
+
+Then open it with nvim
+```bash
+nvim ~/.bashrc
+```
+And change `HOST_MACHINE_IP` to the IP of your Windows host.
+:::tip
+You can find the IP of your Windows host by running `ipconfig` in a Windows terminal.
+:::
 
 ## `.config/starship.toml`
 Starship is the shell prompt. You can download my config with the following

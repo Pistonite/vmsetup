@@ -11,8 +11,8 @@ alias ls='exa'
 alias du='dust'
 alias cat='bat'
 alias grep='grep --color=auto'
-alias vi='nvim -p'
-alias vim='nvim -p'
+alias vi='nvim'
+alias vim='nvim'
 alias nvim='nvim -p'
 # shorthands
 alias c='z'    # zoxide path jumper (e.g "c <path>") zi for interactive
@@ -26,6 +26,7 @@ alias pacman='sudo pacman'
 # EXPORTS ======================================
 # default editor
 export EDITOR='nvim'
+export HOST_MACHINE_IP='192.168.0.218'
 
 # CARGO ========================================
 . "$HOME/.cargo/env"

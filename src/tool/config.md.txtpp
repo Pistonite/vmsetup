@@ -21,6 +21,15 @@ Or, manually copy and paste the following to your `~/.bashrc`
 TXTPP#include ../public/home/.bashrc
 ```
 
+Then open it with nvim
+```bash
+nvim ~/.bashrc
+```
+And change `HOST_MACHINE_IP` to the IP of your Windows host.
+:::tip
+You can find the IP of your Windows host by running `ipconfig` in a Windows terminal.
+:::
+
 ## `.config/starship.toml`
 Starship is the shell prompt. You can download my config with the following
 ```bash

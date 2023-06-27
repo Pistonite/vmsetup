@@ -38,3 +38,13 @@ noremap('n', '<C-w>>', '<C-w>20>')
 noremap('n', '<C-w><', '<C-w>20<')
 noremap('n', '<C-w>+', '<C-w>10+')
 noremap('n', '<C-w>-', '<C-w>10-')
+
+-- save yanked text to host
+-- this uses websocat and a websocket server running on the host machine
+vim.cmd([[
+augroup YankToScript
+  autocmd!
+  autocmd TextYankPost * if v:register == '+' | call writefile([getreg('+')], '/tmp/yank') | silent! execute '!bash -c "source ~/.bashrc && cat /tmp/yank | websocat -1 -t -u ws://$HOST_MACHINE_IP:8881"' | redraw! | endif
+augroup END
+]])
+noremap('v', '<leader>y', '"+y')
