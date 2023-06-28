@@ -97,6 +97,7 @@ Here are some of my key mappings. I use the default leader key.
 ### Terminal
 | Key | Action | Plugin |
 |-|-|-|
-|`<leader><C-\>`|Open Terminal|N/A|
 |`<C-W>`|Go to normal mode if in terminal mode|N/A|
-|`<C-\>`|Launch floating terminal in normal mode|vim-floaterm|
+|`<leader><C-\>`|Open new terminal|vim-floaterm|
+|`<C-\>`|Toggle floating terminal | vim-floaterm|
+[`<C-n>`|Cycle through floating terminals |vim-floaterm|
