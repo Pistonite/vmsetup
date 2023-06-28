@@ -13,6 +13,7 @@ return require("packer").startup(function(use)
     use 'nvim-lualine/lualine.nvim'   -- status line
     -- tree sitter parser
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-context'
     use 'IndianBoy42/tree-sitter-just'
     -- telescope fuzzy finder
     use 'nvim-telescope/telescope.nvim'
@@ -22,6 +23,7 @@ return require("packer").startup(function(use)
     use 'terrortylor/nvim-comment'
     use 'voldikss/vim-floaterm'
     use 'ThePrimeagen/harpoon'
+    use 'lukas-reineke/indent-blankline.nvim'
     -- lsp zero
     use {
         'VonHeikemen/lsp-zero.nvim',

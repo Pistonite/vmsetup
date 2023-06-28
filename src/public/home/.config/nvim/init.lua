@@ -6,3 +6,4 @@ require('plugins')
 -- load key mappings and options
 require('keys')
 require('opts')
+
