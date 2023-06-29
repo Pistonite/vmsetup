@@ -64,6 +64,8 @@ Here are some of my key mappings. I use the default leader key.
 |`<leader>c`|Comment out line/selection|N/A|
 |`<leader>u`|Toggle undotree|undotree|
 |`<leader>y`|Yank selection to host|N/A|
+|`<leader>vg`|Grep in opened files|telescope|
+|`<leader>gs`|Git status|telescope|
 
 
 ### File switching
@@ -77,6 +79,7 @@ Here are some of my key mappings. I use the default leader key.
 |`<leader>ff`|Find file in workspace|telescope|
 |`<leader>fg`|Find string in workspace|telescope|
 |`<leader>fd`|Find diagnostics in workspace|telescope|
+|`<leader>fb`|Find file in opened files|telescope|
 
 ### LSP
 | Key | Action | Plugin |
