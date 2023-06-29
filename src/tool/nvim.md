@@ -86,6 +86,7 @@ Here are some of my key mappings. I use the default leader key.
 |-|-|-|
 |`<leader>r`|Rename symbol|lsp-zero/builtin|
 |`<leader>f`|Format|lsp-zero/builtin|
+|'K'| Hover action|builtin|
 |`gr`|Find reference|telescope|
 |`gd`|Find definition|telescope|
 |`gi`|Find implementation|telescope|

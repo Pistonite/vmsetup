@@ -1,3 +1,5 @@
+-- styling
+vim.g.floaterm_title = 'Terminal [$1/$2]'
 -- toggle floaterm
 vim.keymap.set('n', [[<C-\>]], vim.cmd.FloatermToggle)
 vim.keymap.set('t', [[<C-\>]], vim.cmd.FloatermToggle)
