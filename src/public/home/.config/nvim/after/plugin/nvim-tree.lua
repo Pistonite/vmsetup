@@ -1,5 +1,12 @@
 local api = require "nvim-tree.api"
-vim.keymap.set('n', '<leader>t', api.tree.focus) -- open tree and focus
+vim.keymap.set('n', '<leader>t', api.tree.open) -- open tree and focus
+vim.cmd([[
+    augroup NvimTreeAutoFocus
+        autocmd BufEnter * lua require'nvim-tree.api'.tree.find_file()
+    augroup END
+
+
+]])
 local function on_attach_nvim_tree(bufnr)
     -- only attack keys i need
     local function opts(desc)
@@ -41,7 +48,7 @@ local function on_attach_nvim_tree(bufnr)
     vim.keymap.set('n', 'g?', api.tree.toggle_help, opts('Help'))
 
     -- add custom
-    vim.keymap.set('n', '<C-t>', '<cmd>bnext<cr>', opts 'Unfocus tree')
+    vim.keymap.set('n', '<leader>t', '<C-W>l', opts 'Unfocus tree')
 end
 require("nvim-tree").setup({
     on_attach = on_attach_nvim_tree,
