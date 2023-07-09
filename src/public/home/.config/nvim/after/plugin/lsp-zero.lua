@@ -10,6 +10,7 @@ lsp.on_attach(function(_client, bufnr)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = bufnr })
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = bufnr })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = bufnr })
 
     -- signature help in input mode
     vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { buffer = bufnr })

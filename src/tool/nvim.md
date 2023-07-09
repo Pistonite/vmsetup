@@ -89,6 +89,7 @@ Here are some of my key mappings. I use the default leader key.
 |'K'| Hover action|builtin|
 |`gr`|Find reference|telescope|
 |`gd`|Find definition|telescope|
+|`gt`|Find type of symbol under cursor|lsp-zero/builtin|
 |`gi`|Find implementation|telescope|
 |`<leader>vd`|View diagnostics of current file|telescope|
 |`<leader>vs`|View symbols of current file|telescope|
