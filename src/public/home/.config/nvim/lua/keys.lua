@@ -15,8 +15,9 @@ end)
 noremap('n', '<leader> ', vim.cmd.nohlsearch)
 
 -- cursor movement
-noremap('n', '<C-d>', '<C-d>zz') -- move down half screen and center
-noremap('n', '<C-u>', '<C-u>zz') -- move up half screen and center
+-- 15 lines is about where the text moves and I can still see what's going on
+noremap('n', '<C-d>', '15jzz')   -- bukl move down and center
+noremap('n', '<C-u>', '15kzz')   -- bulk move up and center
 noremap('n', 'n', 'nzz')         -- move to next match and center
 noremap('n', 'N', 'nzz')         -- move to previous match and center
 
@@ -24,8 +25,6 @@ noremap('n', 'N', 'nzz')         -- move to previous match and center
 noremap('v', '<A-j>', [[:m '>+1<cr>gv=gv]]) -- move selection down
 noremap('v', '<A-k>', [[:m '<-2<cr>gv=gv]]) -- move selection up
 
--- copy to system clipboard (commented out because it doesn't work over ssh)
--- noremap({ 'n', 'v' }, '<leader>y', '"+y')
 -- code action menu
 noremap({ 'n', 'v' }, '<leader>a', vim.cmd.CodeActionMenu)
 
@@ -38,6 +37,10 @@ noremap('n', '<C-w>>', '<C-w>20>')
 noremap('n', '<C-w><', '<C-w>20<')
 noremap('n', '<C-w>+', '<C-w>10+')
 noremap('n', '<C-w>-', '<C-w>10-')
+
+-- copy to system clipboard (commented out because it doesn't work over ssh)
+-- workaround is sending the text over websocket to the host
+-- noremap({ 'n', 'v' }, '<leader>y', '"+y')
 
 -- save yanked text to host
 -- this uses websocat and a websocket server running on the host machine
