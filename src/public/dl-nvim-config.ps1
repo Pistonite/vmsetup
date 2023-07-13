@@ -5,7 +5,6 @@ curl -o $configdir/init.lua https://vmsetup.pistonite.org/home/.config/nvim/init
 curl -o $configdir/lua/plugins.lua https://vmsetup.pistonite.org/home/.config/nvim/lua/plugins.lua
 curl -o $configdir/lua/keys.lua https://vmsetup.pistonite.org/home/.config/nvim/lua/keys.lua
 curl -o $configdir/lua/opts.lua https://vmsetup.pistonite.org/home/.config/nvim/lua/opts.lua
-curl -o $configdir/after/plugin/autoclose.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/autoclose.lua
 curl -o $configdir/after/plugin/harpoon.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/harpoon.lua
 curl -o $configdir/after/plugin/lsp-zero.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/lsp-zero.lua
 curl -o $configdir/after/plugin/nvim-comment.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/nvim-comment.lua

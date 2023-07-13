@@ -35,7 +35,7 @@ You will see some errors because the plugins are not installed. It's OK. Run the
 Restart neovim and you should be good.
 
 ## GitHub Copilot
-If you have GitHub Copilor, run the following to set it up
+If you have GitHub Copilot, run the following to set it up
 ```vim
 :Copilot setup
 ```
@@ -61,6 +61,7 @@ Here are some of my key mappings. I use the default leader key.
 |`<C-W><`|Decrease window width by 20|N/A|
 |`<C-W>+`|Increase window height by 10|N/A|
 |`<C-W>-`|Decrease window height by 10|N/A|
+|`<leader>w`|Switch left and right (rotate buffer positions)|N/A|
 |`<leader>c`|Comment out line/selection|N/A|
 |`<leader>u`|Toggle undotree|undotree|
 |`<leader>y`|Yank selection to host|N/A|
@@ -77,6 +78,7 @@ Here are some of my key mappings. I use the default leader key.
 |`<leader>2`|Go to 2 in Harpoon|N/A|
 |`<leader>3`|Go to 3 in Harpoon|N/A|
 |`<leader>ff`|Find file in workspace|telescope|
+|`<leader>gg`|Find git files|telescope|
 |`<leader>fg`|Find string in workspace|telescope|
 |`<leader>fd`|Find diagnostics in workspace|telescope|
 |`<leader>fb`|Find file in opened files|telescope|

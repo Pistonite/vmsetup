@@ -24,7 +24,6 @@ return require("packer").startup(function(use)
     use 'voldikss/vim-floaterm'
     use 'ThePrimeagen/harpoon'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'm4xshen/autoclose.nvim'
     -- lsp zero
     use {
         'VonHeikemen/lsp-zero.nvim',

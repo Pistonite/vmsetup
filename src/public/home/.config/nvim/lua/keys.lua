@@ -11,13 +11,17 @@ end
 noremap('n', '<leader>0', function()
     vim.o.relativenumber = not vim.o.relativenumber
 end)
+-- toggle show hidden characters
+noremap('n', '<leader>$', function()
+    vim.o.list = not vim.o.list
+end)
 -- turn off search highlight
 noremap('n', '<leader> ', vim.cmd.nohlsearch)
 
 -- cursor movement
 -- 15 lines is about where the text moves and I can still see what's going on
-noremap('n', '<C-d>', '15jzz')   -- bukl move down and center
-noremap('n', '<C-u>', '15kzz')   -- bulk move up and center
+noremap('n', '<C-d>', '15j')     -- bukl move down  
+noremap('n', '<C-u>', '15k')     -- bulk move up  
 noremap('n', 'n', 'nzz')         -- move to next match and center
 noremap('n', 'N', 'nzz')         -- move to previous match and center
 
@@ -51,3 +55,6 @@ augroup YankToScript
 augroup END
 ]])
 noremap('v', '<leader>y', '"+y')
+
+-- swap left and right buffers
+noremap('n', '<leader>w', '<cmd>NvimTreeClose<cr><C-w>r<cmd>NvimTreeOpen<cr><C-W>l')
