@@ -6,7 +6,7 @@ This README is for setting up the Repo. Visit https://vmsetup.pistonite.org to s
 ## Commands
 Install dependencies
 ```
-npm i
+just install
 ```
 Local dev:
 ```

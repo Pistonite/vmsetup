@@ -1,3 +1,7 @@
+install:
+    cargo install txtpp --features cli
+    npm i
+
 # Replace init.lua, after, and the lua directory in src/public/home/.config/nvim with ~/.config/nvim
 copy-nvim:
     rm -rf src/public/home/.config/nvim
