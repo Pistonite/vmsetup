@@ -48,6 +48,17 @@ Since the VM is headless, there's no clipboard provider to support the `+` regis
 
 You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it over to the host. On windows, it uses powershell's `Set-Clipboard` command so you don't need to do extra setup.
 
+## Update
+To update the plugins/packages/tools, run
+```
+:PackerSync
+```
+After that, also update treesitter and Mason tools
+```
+:TSUpdate
+:MasonUpdate
+```
+
 ## Key mappings
 Here are some of my key mappings. I use the default leader key.
 ### Normal operations
@@ -107,4 +118,4 @@ Here are some of my key mappings. I use the default leader key.
 |`<C-W>`|Go to normal mode if in terminal mode|N/A|
 |`<leader><C-\>`|Open new terminal|vim-floaterm|
 |`<C-\>`|Toggle floating terminal | vim-floaterm|
-[`<C-n>`|Cycle through floating terminals |vim-floaterm|
+|`<C-n>`|Cycle through floating terminals |vim-floaterm|
