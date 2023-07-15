@@ -3,7 +3,7 @@ install:
     npm i
 
 # Replace init.lua, after, and the lua directory in src/public/home/.config/nvim with ~/.config/nvim
-copy-nvim:
+nvim:
     rm -rf src/public/home/.config/nvim
     mkdir -p src/public/home/.config/nvim
     cp ~/.config/nvim/init.lua src/public/home/.config/nvim

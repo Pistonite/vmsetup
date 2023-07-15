@@ -46,7 +46,7 @@ You can use `:Copilot status` to check at anytime if it is enabled
 ## Yank to host clipboard
 Since the VM is headless, there's no clipboard provider to support the `+` register. So I made a simple python program [`ws-clipboard`](https://github.com/Pistonight/ws-clipboard) that starts a websocket server and stores whatever it receives into the clipboard.
 
-You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it over to the host.
+You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it over to the host. On windows, it uses powershell's `Set-Clipboard` command so you don't need to do extra setup.
 
 ## Key mappings
 Here are some of my key mappings. I use the default leader key.
@@ -64,7 +64,7 @@ Here are some of my key mappings. I use the default leader key.
 |`<leader>w`|Switch left and right (rotate buffer positions)|N/A|
 |`<leader>c`|Comment out line/selection|N/A|
 |`<leader>u`|Toggle undotree|undotree|
-|`<leader>y`|Yank selection to host|N/A|
+|`<leader>y`|Yank selection to host clipboard|N/A|
 |`<leader>vg`|Grep in opened files|telescope|
 |`<leader>gs`|Git status|telescope|
 

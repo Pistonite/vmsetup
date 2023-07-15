@@ -13,11 +13,18 @@ Setting up the same Neovim environment on Windows. Bye VSCode :)
     Add the following. Replace the path with the path to `bin` directory of the neovim installation
     ```
     # Neovim
+    function Enter-Neovim {
+        Import-VisualStudioVarsIfNeeded
+        nvim $args
+    }
     $env:HOME = $env:USERPROFILE
     $env:PATH = "C:\Program Files\Neovim\bin;$env:PATH"
     Set-Alias vim nvim
     Set-Alias vi nvim
     ```
+    :::tip
+    Import visual studio vars so we have `cl` available
+    :::
 3. Reload powershell and you should be able to run nvim
 
 ## Packer
@@ -30,5 +37,4 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
     ```powershell
     iwr -useb https://vmsetup.pistonite.org/dl-nvim-config.ps1 | iex
     ```
-1. Start nvim, ignore errors and run `:PackerSync`
-1. Restart nvim and you should be good to go
+1. Start nvim. Follow [the normal nvim setup](/tool/nvim#install-the-plugins) from now on

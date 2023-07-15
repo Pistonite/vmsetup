@@ -12,7 +12,7 @@ Launch the installer and select components, make sure the following are selected
 Other components might get auto selected
 
 ## Adding cl to path
-We need [Pscx](https://www.powershellgallery.com/packages/Pscx) for this.
+We need [Pscx](https://www.powershellgallery.com/packages/Pscx) for the `Import-VisualStudioVars` command.
 
 Run as admin
 ```powershell
@@ -27,9 +27,20 @@ Install-Module PowershellGet -AllowClobber -Force
 ```
 Then restart powershell
 :::
-Then `notepad $Profile` and add
+
+After installing the extension. We will create a custom wrapper that loads visual studio vars when needed.
+
+Run `notepad $Profile` and add
 ```
-Import-VisualStudioVars 2022 amd64
+# Wrapper for loading Visual Studio vars on demand
+# because it's slow
+function Import-VisualStudioVarsIfNeeded {
+    Get-Command cl.exe -ErrorAction SilentlyContinue | Out-Null
+    if ($?) {
+        return
+    }
+    Import-VisualStudioVars 2022 amd64
+}
 ```
 :::tip
 Change `2022` and `amd64` to your VS version and OS arch
