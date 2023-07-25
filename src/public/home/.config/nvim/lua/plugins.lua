@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
     use 'IndianBoy42/tree-sitter-just'
     -- telescope fuzzy finder
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-ui-select.nvim'
     use 'nvim-lua/plenary.nvim' -- useful stuff (required by telescope)
     -- useful plugins
     use 'mbbill/undotree'
@@ -50,6 +51,4 @@ return require("packer").startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'hrsh7th/cmp-nvim-lua'
-    -- code action menu (lsp-zero doesn't come with one)
-    use 'weilbith/nvim-code-action-menu'
 end)

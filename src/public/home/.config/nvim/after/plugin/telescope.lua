@@ -30,5 +30,13 @@ require('telescope').setup({
                 ["<A-k>"] = "move_selection_previous",
             }
         }
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+            }
+        }
     }
 })
+
+require("telescope").load_extension("ui-select")

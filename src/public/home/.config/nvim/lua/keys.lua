@@ -29,8 +29,6 @@ noremap('n', 'N', 'nzz')         -- move to previous match and center
 noremap('v', '<A-j>', [[:m '>+1<cr>gv=gv]]) -- move selection down
 noremap('v', '<A-k>', [[:m '<-2<cr>gv=gv]]) -- move selection up
 
--- code action menu
-noremap({ 'n', 'v' }, '<leader>a', vim.cmd.CodeActionMenu)
 
 -- what
 noremap('n', 'q', '<nop>')
