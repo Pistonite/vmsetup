@@ -66,4 +66,11 @@ Replace the `"actions"` section with my key bindings:
         "keys": "alt+shift+d"
     }
 ],
+
+
 ```
+
+## Font
+If you need a nerd font you can download from here: https://www.nerdfonts.com/font-downloads
+
+Then open Windows Terminal > Settings. Under Profiles select Defaults, and change the color scheme and font.
