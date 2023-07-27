@@ -19,8 +19,8 @@ Setting up the same Neovim environment on Windows. Bye VSCode :)
     }
     $env:HOME = $env:USERPROFILE
     $env:PATH = "C:\Program Files\Neovim\bin;$env:PATH"
-    Set-Alias vim nvim
-    Set-Alias vi nvim
+    Set-Alias vim Enter-Neovim
+    Set-Alias vi Enter-Neovim
     ```
     :::tip
     Import visual studio vars so we have `cl` available
