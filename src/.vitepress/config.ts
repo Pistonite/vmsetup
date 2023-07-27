@@ -38,6 +38,17 @@ const archSidebar = [
     },
 ];
 
+const windowsSidebar = [
+    {
+        text: "Windows Host",
+        items: [
+            { text: "Terminal", link: "/windows/terminal" },
+            { text: "Visual Studio", link: "/windows/visual-studio" },
+            { text: "Neovim", link: "/windows/nvim" },
+        ]
+    }
+]
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "Pistonite VM",
@@ -52,15 +63,7 @@ export default defineConfig({
           { text: "Windows", link: "/windows/index" }
         ],
         sidebar: {
-            "/windows/": [
-                {
-                    text: "Windows Host",
-                    items: [
-                        { text: "Visual Studio", link: "/windows/visual-studio" },
-                        { text: "Neovim", link: "/windows/nvim" },
-                    ]
-                }
-            ],
+            "/windows/": windowsSidebar,
             "/": archSidebar,
         },
 
