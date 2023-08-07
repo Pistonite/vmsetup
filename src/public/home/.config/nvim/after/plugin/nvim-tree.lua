@@ -18,7 +18,7 @@ local function on_attach_nvim_tree(bufnr)
             nowait = true
         }
     end
-    vim.keymap.set('n', 'K', api.node.show_info_popup, opts('Info'))
+    vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts('Info'))
     vim.keymap.set('n', 'O', api.node.navigate.parent_close, opts('Close parent'))
     vim.keymap.set('n', 'P', api.node.navigate.parent, opts('Go to parent'))
     vim.keymap.set('n', 'm', api.fs.rename_sub, opts('Move'))

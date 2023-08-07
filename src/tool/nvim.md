@@ -73,6 +73,8 @@ Here are some of my key mappings. I use the default leader key.
 |`<C-W>+`|Increase window height by 10|N/A|
 |`<C-W>-`|Decrease window height by 10|N/A|
 |`<leader>w`|Switch left and right (rotate buffer positions)|N/A|
+|`<leader>dh`|Clone right panel to left panel|N/A|
+|`<leader>dl`|Clone left panel to right panel|N/A|
 |`<leader>c`|Comment out line/selection|N/A|
 |`<leader>u`|Toggle undotree|undotree|
 |`<leader>y`|Yank selection to host clipboard|N/A|

@@ -18,12 +18,18 @@ end)
 -- turn off search highlight
 noremap('n', '<leader> ', vim.cmd.nohlsearch)
 
+-- git merge
+noremap('n', '<leader>mo', '<cmd>NvimTreeClose<cr><cmd>Gvdiffsplit!<cr>')
+noremap('n', '<leader>mb', '<cmd>diffget //2<cr>')
+noremap('n', '<leader>mn', '<cmd>diffget //3<cr>')
+noremap('n', '<leader>mc', '<cmd>bdelete //3<cr><cmd>bdelete //2<cr><cmd>NvimTreeOpen<cr>')
+
 -- cursor movement
 -- 15 lines is about where the text moves and I can still see what's going on
 noremap('n', '<C-d>', '15j')     -- bukl move down  
 noremap('n', '<C-u>', '15k')     -- bulk move up  
 noremap('n', 'n', 'nzz')         -- move to next match and center
-noremap('n', 'N', 'nzz')         -- move to previous match and center
+noremap('n', 'N', 'Nzz')         -- move to previous match and center
 
 -- line movement (note: the : cannot be replaced by <cmd>)
 noremap('v', '<A-j>', [[:m '>+1<cr>gv=gv]]) -- move selection down
@@ -64,3 +70,6 @@ noremap('v', '<leader>y', '"+y')
 
 -- swap left and right buffers
 noremap('n', '<leader>w', '<cmd>NvimTreeClose<cr><C-w>r<cmd>NvimTreeOpen<cr><C-W>l')
+-- duplicate split view to other side
+noremap('n', '<leader>dl', '<C-w>l<cmd>q<cr><C-w>v') --left to right
+noremap('n', '<leader>dh', '<C-w>h<cmd>q<cr><C-w>v') --right to left
