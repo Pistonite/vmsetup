@@ -33,6 +33,7 @@ const archSidebar = [
             { text: "Python", link: "/tool/python" },
             { text: "Git", link: "/tool/git" },
             { text: "Neovim", link: "/tool/nvim" },
+            { text: "HTTPS", link: "/tool/https" },
             { text: "TODO", link: "/tool/todo" },
         ]
     },
@@ -45,6 +46,7 @@ const windowsSidebar = [
             { text: "Terminal", link: "/windows/terminal" },
             { text: "Visual Studio", link: "/windows/visual-studio" },
             { text: "Neovim", link: "/windows/nvim" },
+            { text: "SSL Certificate", link: "/windows/cert" },
         ]
     }
 ]
