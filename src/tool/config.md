@@ -46,7 +46,7 @@ alias pacman='sudo pacman'
 # EXPORTS ======================================
 # default editor
 export EDITOR='nvim'
-export HOST_MACHINE_IP='192.168.0.218'
+export HOST_MACHINE_IP="192.168.0.218"
 
 # CARGO ========================================
 . "$HOME/.cargo/env"
@@ -68,8 +68,14 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# BUN ==========================================
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
 # HOME/BIN =====================================
-export PATH="$HOME/bin:$PATH"```
+export PATH="$HOME/bin:$PATH"
+
+```
 
 Then open it with nvim
 ```bash
