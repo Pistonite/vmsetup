@@ -17,15 +17,19 @@ jobs:
     steps:
     - name: Setup | Checkout
       uses: actions/checkout@v3
-    - name: Setup | Node Install
-      run: npm ci
+    - name: Setup | Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+    - name: Setup | Bun Install
+      run: bun install --frozen-lockfile
     - name: Build | Build App
-      run: npm run build
+      run: bunx vitepress build src
     - name: Build | Upload Artifact
       uses: actions/upload-pages-artifact@v1.0.4
       with:
         path: src/.vitepress/dist
-        retention-days: 7
+        retention-days: 3
 
   deploy:
     name: Deploy

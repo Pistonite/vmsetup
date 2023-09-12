@@ -29,6 +29,7 @@ const archSidebar = [
             { text: "Version Switchers", link: "/tool/version-switcher" },
             { text: "Configure Shell", link: "/tool/config" },
             { text: "Docker", link: "/tool/docker" },
+            { text: "Bun", link: "/tool/bun" },
             { text: "Node", link: "/tool/node" },
             { text: "Python", link: "/tool/python" },
             { text: "Git", link: "/tool/git" },

@@ -1,4 +1,8 @@
 # Node.js
+:::warning
+If you are new to the JS world you might want to checkout [`bun`](./bun.md),
+which is better than node.js. Continue here if you actually need node.
+:::
 
 ## Install with NVM
 I only need v18 LTS. You can install other versions too
