@@ -1,0 +1,36 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install dependencies and packages
+    aliases: [i]
+    cmds:
+      - cargo install txtpp --features cli
+      - bun i
+
+  dev:
+    desc: Run local dev server
+    cmds:
+    - bunx vitepress dev src --host
+
+  build:
+    desc: Build the app locally
+    cmds:
+    - txtpp verify -r
+    - bunx vitepress build src
+
+  nvim:
+    desc: Copy nvim configs from home to repo
+    cmds:
+    - rm -rf src/public/home/.config/nvim
+    - mkdir -p src/public/home/.config/nvim
+    - cp ~/.config/nvim/init.lua src/public/home/.config/nvim
+    - cp -r ~/.config/nvim/after src/public/home/.config/nvim
+    - cp -r ~/.config/nvim/lua src/public/home/.config/nvim
+
+  bash:
+    desc: Copy .bashrc from home to repo
+    cmds:
+    - cp ~/.bashrc src/public/home/.bashrc
+    - txtpp -r
+

@@ -27,9 +27,10 @@ const archSidebar = [
         items: [
             { text: "Basic Tools", link: "/tool/basic-tools" },
             { text: "Version Switchers", link: "/tool/version-switcher" },
-            { text: "Configure Shell", link: "/tool/config" },
-            { text: "Docker", link: "/tool/docker" },
             { text: "Bun", link: "/tool/bun" },
+            { text: "Configure Shell", link: "/tool/config" },
+            { text: "Task", link: "/tool/task" },
+            { text: "Docker", link: "/tool/docker" },
             { text: "Node", link: "/tool/node" },
             { text: "Python", link: "/tool/python" },
             { text: "Git", link: "/tool/git" },

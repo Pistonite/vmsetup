@@ -2,7 +2,7 @@
 We will install a flurry of basic tools.
 
 ## yay
-`yay` is a AUR helper that helps with installing stuff from AUR. Since `yay` is itself an AUR package, we will need to install it from source.
+`yay` is an AUR helper that helps with installing stuff from AUR. Since `yay` is itself an AUR package, we will need to install it from source.
 ```bash
 cd ~
 git clone https://aur.archlinux.org/yay.git
@@ -17,7 +17,7 @@ Unlike `pacman`, when using `yay` to install, you do not need to run it with `su
 
 
 ## Rust
-We will install [Rust](https://rustup.rs/) as the first thing so we can install some additional tools with `cargo`.
+We will install [Rust](https://rustup.rs/) as the first thing, so we can install some additional tools with `cargo`.
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -35,7 +35,7 @@ Time to install more stuff with `cargo`. I will provide the configuration files 
 ```bash
 cargo install exa bat cargo-info cargo-watch just du-dust ripgrep fd-find starship zoxide websocat
 ```
-Explaination of each package:
+Explanation of each package:
 
 | Package | Description | Link |
 |-|-|-|
@@ -50,3 +50,7 @@ Explaination of each package:
 | `ripgrep` | Search tool (telescope.nvim requires it) | https://github.com/BurntSushi/ripgrep |
 | `fd-find` | File find tool (telescope.nvim requires it) | https://github.com/sharkdp/fd |
 | `websocat` | Websocket client CLI | https://github.com/vi/websocat |
+
+## Next Steps
+Next we will install tools that require change to `.bashrc`, so
+we can install them all first and copy the `.bashrc` directly afterward.
