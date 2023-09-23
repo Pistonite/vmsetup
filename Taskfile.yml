@@ -19,6 +19,11 @@ tasks:
     - txtpp verify -r
     - bunx vitepress build src
 
+  serve:
+    desc: Serve the built app locally
+    cmds:
+    - bun serve.ts
+
   nvim:
     desc: Copy nvim configs from home to repo
     cmds:
