@@ -73,4 +73,11 @@ Replace the `"actions"` section with my key bindings:
 ## Font
 If you need a nerd font you can download from here: https://www.nerdfonts.com/font-downloads
 
-Then open Windows Terminal > Settings. Under Profiles select Defaults, and change the color scheme and font.
+Then open Windows Terminal > Settings. Under Profiles select Defaults > Appearance, and change the color scheme and font.
+
+## Padding
+In the same place (Windows Terminal > Settings. Under Profiles select Defaults > Appearance),
+scroll down, and change Padding to 2 and scroll bar visibility to hidden
+
+## Title bar
+Go to Appearance, then turn off "Hide the title bar" and "Always show tabs"
