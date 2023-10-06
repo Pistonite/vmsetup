@@ -1,5 +1,8 @@
 # Visual Studio
 Who doesn't like 20GB of compilers
+:::tip
+If the environment has another way to have a compiler like gcc available, you can skip this
+:::
 
 ## Download
 Download Visual Studio Installer from https://visualstudio.microsoft.com/downloads/
@@ -45,3 +48,10 @@ function Import-VisualStudioVarsIfNeeded {
 :::tip
 Change `2022` and `amd64` to your VS version and OS arch
 :::
+
+## Or: Use cl from Developer Shell
+If the method above doesn't work, you can skip it and use this method instead.
+
+Everytime if you get an error saying compiler or linker not found, run the command again using "Developer Powershell for VS 2022" An example is when installing treesitter parsers in neovim.
+
+It should be available as a shell in the Terminal app, or you can search in the start menu to find it
