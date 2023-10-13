@@ -5,12 +5,13 @@ If the environment has another way to have a compiler like gcc available, you ca
 :::
 
 ## Download
-Download Visual Studio Installer from https://visualstudio.microsoft.com/downloads/
+Download Visual Studio **Build Tools** Installer from https://visualstudio.microsoft.com/downloads/
+:::tip
+Scroll down to find the build tools. Don't download the IDE.
+:::
 
 ## Install
-Launch the installer and select components, make sure the following are selected
-- Windows 11 SDK (Or 10 if you are using Windows 10)
-- MSVC
+Launch the installer, select "Windows Desktop C++ Development" (or whatever it's called)
 
 Other components might get auto selected
 
