@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local bufnr = args.buf
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         require("lsp-inlayhints").on_attach(client, bufnr)
+        vim.cmd("hi LspInlayHint guifg=#d8d8d8 guibg=#3a3a3a")
     end,
 })
 
-vim.cmd("hi LspInlayHint guifg=#d8d8d8 guibg=#3a3a3a")
