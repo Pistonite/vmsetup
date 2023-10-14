@@ -18,7 +18,14 @@ vim.opt.termguicolors = true -- colors
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+local home = os.getenv('HOME')
+if home == nil then
+    home = os.getenv('USERPROFILE')
+end
+if home ~= nil then
+    vim.opt.undodir = home .. '/.vim/undodir'
+end
+
 -- folds
 vim.opt.foldenable = false   -- no fold at startup
 vim.opt.foldmethod = 'expr'  -- treesitter folding

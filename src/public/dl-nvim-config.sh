@@ -1,3 +1,4 @@
+mkdir -p ~/.vim
 mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/nvim/after/plugin
 curl -o ~/.config/nvim/init.lua https://vmsetup.pistonite.org/home/.config/nvim/init.lua

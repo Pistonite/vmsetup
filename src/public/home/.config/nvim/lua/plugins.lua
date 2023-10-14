@@ -51,6 +51,8 @@ return require("packer").startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'hrsh7th/cmp-nvim-lua'
+    -- inlay hints
+    use 'lvimuser/lsp-inlayhints.nvim'
     -- git
     use 'tpope/vim-fugitive'
 end)

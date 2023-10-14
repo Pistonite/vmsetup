@@ -1,4 +1,5 @@
 $configdir = "$env:LOCALAPPDATA\nvim"
+mkdir -p $env:USERPROFILE/.vim
 mkdir -p $configdir/lua
 mkdir -p $configdir/after/plugin
 curl -o $configdir/init.lua https://vmsetup.pistonite.org/home/.config/nvim/init.lua
