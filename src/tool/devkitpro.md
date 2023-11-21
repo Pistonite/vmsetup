@@ -6,7 +6,7 @@ to add the servers.
 
 ## Install group
 Install the group you want, found on the wiki, for example.
-```
+```bash
 pacman -Syu switch-dev
 ```
 :::tip

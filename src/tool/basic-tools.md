@@ -53,7 +53,7 @@ Explanation of each package:
 
 | Package | Description | Link |
 |-|-|-|
-| `exa` | `ls` but better | https://github.com/ogham/exa |
+| `eza` | `ls` but better | https://github.com/eza-community/eza |
 | `bat` | `cat` with wings | https://github.com/sharkdp/bat |
 | `cargo-info` | Cargo command for getting info about crates, and most usefully, feature flags | https://gitlab.com/imp/cargo-info |
 | `cargo-watch` | Cargo command for running command in watch mode | https://github.com/watchexec/cargo-watch |
