@@ -36,7 +36,8 @@ const archSidebar = [
             { text: "Git", link: "/tool/git" },
             { text: "Neovim", link: "/tool/nvim" },
             { text: "HTTPS", link: "/tool/https" },
-            { text: "TODO", link: "/tool/todo" },
+            { text: "DevKitPro", link: "/tool/devkitpro" },
+            // { text: "TODO", link: "/tool/todo" },
         ]
     },
 ];

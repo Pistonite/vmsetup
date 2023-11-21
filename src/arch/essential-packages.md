@@ -8,12 +8,12 @@ The mirrors are usually set up correctly by default. If you want to change them,
 Run `pacstrap` to install the base packages. The command below shows my list of packages. You can add or remove as you like.
 ### For AMD CPU:
 ```
-pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
+pacstrap -K /mnt base pacman-contrib base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
 ```
 
 ### For Intel CPU:
 ```
-pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
+pacstrap -K /mnt base pacman-contrib base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git neovim fzf htop lsof openssh sudo networkmanager curl wget zip unzip man-db man-pages texinfo
 ```
 
 ### Details
@@ -21,6 +21,7 @@ pacstrap -K /mnt base base-devel linux linux-lts linux-firmware linux-headers li
 | Package | Description |
 |-|-|
 |`base`|This is the most important meta package that includes a minimal set of things you need, like `glibc`, `bash` and `pacman` (the package manager)|
+|`pacman-contrib`|Contains utilities for updating mirror list for `pacman`|
 |`base-devel`| Meta package for building packages from source. Includes things like `make` and `gcc`.|
 |`linux` and `linux-lts`|The kernel and the Long-Term Support (LTS) kernel|
 |`linux-firmware`|Firmware stuff I don't understand that you should probably get|
