@@ -27,7 +27,7 @@ Or, manually copy and paste the following to your `~/.bashrc`
 
 # ALIAS ========================================
 # replacements
-alias ls='exa' 
+alias ls='eza' 
 alias du='dust'
 alias cat='bat'
 alias grep='grep --color=auto'
@@ -37,16 +37,18 @@ alias nvim='nvim -p'
 # shorthands
 alias c='z'    # zoxide path jumper (e.g "c <path>") zi for interactive
 alias j='just' # justfile runner (e.g. "j <task>")
+alias task='go-task' # taskfile runner
+alias x='task' # taskfile runner (e.g. "x <task>")
 # quick config editor
 alias vibash='nvim ~/.bashrc'
-alias vinvim='nvim ~/.config/nvim/init.lua'
+alias vinvim='nvim ~/.config/nvim/'
 # default sudo
 alias pacman='sudo pacman'
 
 # EXPORTS ======================================
 # default editor
 export EDITOR='nvim'
-export HOST_MACHINE_IP='192.168.0.218'
+export HOST_MACHINE_IP="192.168.0.218"
 
 # CARGO ========================================
 . "$HOME/.cargo/env"
@@ -68,8 +70,13 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# BUN ==========================================
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
 # HOME/BIN =====================================
 export PATH="$HOME/bin:$PATH"
+
 ```
 
 Then open it with nvim

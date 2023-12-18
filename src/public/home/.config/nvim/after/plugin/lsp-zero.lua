@@ -18,8 +18,49 @@ lsp.on_attach(function(_client, bufnr)
     vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { buffer = bufnr })
 end)
 
--- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- Configure individual language servers
+local lspconfig = require('lspconfig')
+-- Lua LS
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+local string_to_list = function(str, delimiter)
+    local list = {}
+    for word in string.gmatch(str, '([^' .. delimiter .. ']+)') do
+        table.insert(list, word)
+    end
+    return list
+end
+
+-- Rust Analyzer Environment Variables
+--   LSP_RUST_ANALYZER_FEATURES: comma separated list of features to enable
+--   LSP_RUST_ANALYZER_NO_DEFAULT_FEATURES: set to anything to disable default features
+--   LSP_RUST_ANALYZER_EXTRA_ARGS: extra arguments to pass to cargo
+local lsp_rust_analyzer_features = (function()
+    local env_value = vim.env.LSP_RUST_ANALYZER_FEATURES
+    if env_value == nil then
+        return {}
+    end
+    return string_to_list(env_value, ',')
+end)()
+local lsp_rust_analyzer_extra_args = (function()
+    local env_value = vim.env.LSP_RUST_ANALYZER_EXTRA_ARGS
+    if env_value == nil then
+        return {}
+    end
+    return string_to_list(env_value, ' ')
+end)()
+local lsp_rust_analyzer_no_default_features = vim.env.LSP_RUST_ANALYZER_NO_DEFAULT_FEATURES ~= nil
+lspconfig.rust_analyzer.setup({
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                extraArgs = lsp_rust_analyzer_extra_args,
+                features = lsp_rust_analyzer_features,
+                noDefaultFeatures = lsp_rust_analyzer_no_default_features,
+            }
+        }
+    }
+})
 
 lsp.setup()
 
