@@ -23,7 +23,7 @@ jobs:
     - name: Build | Build App
       run: bunx vitepress build src
     - name: Build | Upload Artifact
-      uses: actions/upload-pages-artifact@v1.0.4
+      uses: actions/upload-pages-artifact@v3
       with:
         path: src/.vitepress/dist
         retention-days: 3
@@ -42,4 +42,4 @@ jobs:
     steps:
     - name: Deploy | GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v1
+      uses: actions/deploy-pages@v4
