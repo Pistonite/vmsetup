@@ -8,6 +8,7 @@ curl -o $configdir/lua/keys.lua https://vmsetup.pistonite.org/home/.config/nvim/
 curl -o $configdir/lua/opts.lua https://vmsetup.pistonite.org/home/.config/nvim/lua/opts.lua
 curl -o $configdir/after/plugin/harpoon.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/harpoon.lua
 curl -o $configdir/after/plugin/lsp-zero.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/lsp-zero.lua
+curl -o $configdir/after/plugin/lsp-inlayhints.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/lsp-inlayhints.lua
 curl -o $configdir/after/plugin/nvim-comment.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/nvim-comment.lua
 curl -o $configdir/after/plugin/nvim-tree.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/nvim-tree.lua
 curl -o $configdir/after/plugin/nvim-treesitter-context.lua https://vmsetup.pistonite.org/home/.config/nvim/after/plugin/nvim-treesitter-context.lua
