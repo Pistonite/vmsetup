@@ -1,6 +1,9 @@
 # Neovim on Windows
 Setting up the same Neovim environment on Windows. Bye VSCode :)
 
+## Requirement
+Make sure you have [zig](./zig.md) installed. This is the easiest way to get a compatible C compiler.
+
 ## Installation
 1. Download pre-built binary for Windows from https://github.com/neovim/neovim/wiki/Installing-Neovim
     :::tip
@@ -13,18 +16,11 @@ Setting up the same Neovim environment on Windows. Bye VSCode :)
     Add the following. Replace the path with the path to `bin` directory of the neovim installation
     ```
     # Neovim
-    function Enter-Neovim {
-        Import-VisualStudioVarsIfNeeded
-        nvim $args
-    }
     $env:HOME = $env:USERPROFILE
     $env:PATH = "C:\Program Files\Neovim\bin;$env:PATH"
-    Set-Alias vim Enter-Neovim
-    Set-Alias vi Enter-Neovim
+    Set-Alias vim nvim
+    Set-Alias vi nvim
     ```
-    :::tip
-    Import visual studio vars so we have `cl` available
-    :::
 3. Reload powershell and you should be able to run nvim
 
 ## Packer

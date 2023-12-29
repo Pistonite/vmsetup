@@ -48,6 +48,7 @@ const windowsSidebar = [
         items: [
             { text: "Terminal", link: "/windows/terminal" },
             { text: "Visual Studio", link: "/windows/visual-studio" },
+            { text: "Zig", link: "/windows/zig" },
             { text: "Neovim", link: "/windows/nvim" },
             { text: "SSL Certificate", link: "/windows/cert" },
         ]

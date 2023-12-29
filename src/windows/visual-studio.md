@@ -1,8 +1,5 @@
 # Visual Studio
 Who doesn't like 20GB of compilers
-:::tip
-If the environment has another way to have a compiler like gcc available, you can skip this
-:::
 
 ## Download
 Download Visual Studio **Build Tools** Installer from https://visualstudio.microsoft.com/downloads/
