@@ -31,7 +31,7 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ## Config
 1. Download the config files
     ```powershell
-    Invoke-WebRequest https://vmsetup.pistonite.org/dl-nvim-config.ps1 -OutFile dl-nvim-config.py
+    Invoke-WebRequest https://vmsetup.pistonite.org/dl-nvim-config.py -OutFile dl-nvim-config.py
     python dl-nvim-config.py
     Remove-Item dl-nvim-config.py
     ```
