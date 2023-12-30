@@ -18,9 +18,11 @@ I made a script to `curl` them to the right places. If you want to use them, bac
 ```bash
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
-Then run the script
+Then download and run the script
 ```bash
-curl -o- https://vmsetup.pistonite.org/dl-nvim-config.sh | bash
+curl -o dl-nvim-config.py https://vmsetup.pistonite.org/dl-nvim-config.py
+python dl-nvim-config.py
+rm dl-nvim-config.py
 ```
 
 ## Install the plugins
@@ -121,3 +123,36 @@ Here are some of my key mappings. I use the default leader key.
 |`<leader><C-\>`|Open new terminal|vim-floaterm|
 |`<C-\>`|Toggle floating terminal | vim-floaterm|
 |`<C-n>`|Cycle through floating terminals |vim-floaterm|
+
+## Language-specific LSP Setups
+### Works out-of-box with Mason
+The following should work mostly out-of-box when installing through Mason:
+- `rust-analyzer`
+- `typescript-language-server
+- `eslint-lsp`
+
+### C/C++ (`clangd`)
+1. Install it through Mason
+2. Your build system must produce a `compile-commands.json`
+3. Create `.clangd` in the root of the projects with the following, changing the path accordingly
+   ```yaml
+   CompileFlags:
+     CompilationDatabase: ./path/to/directory/with/compile-commands.json
+   ```
+4. If additional configuration is needed, follow https://clangd.llvm.org/config.html#compileflags
+
+### Java (`jdtls`)
+1. DO NOT install it through Mason. Instead, download from https://download.eclipse.org/jdtls/milestones
+2. Extract JDTLS from the download from step 1. Put it in some permanent location, then set the `ECLIPSE_JDTLS_HOME` variable to
+that folder.
+:::tip
+I have a folder, say `E:\Eclipse` (on windows), that I put `jdtls` as well as all my jdks.
+:::
+3. You also need a decently new version of JDK. Install the latest from https://jdk.java.net/ or from package manager.
+   At the time of writing, the latest is JDK 21
+4. Set `ECLIPSE_JDK_HOME` to the JDK you will be using for JDTLS
+:::tip
+Both `ECLIPSE_JDTLS_HOME` and `ECLIPSE_JDK_HOME` are referenced in the nvim config, so the config can be cross-plat.
+:::
+5. For every runtime you want to use, set the `JDK<version>_HOME` to the path of the JDK. For example `JDK8_HOME` for `JavaSE-1.8` and
+`JDK21_HOME` for `JavaSE-21`. JDTLS will detect the runtime to use from `.classpath`, then use this env to find the Java installation.

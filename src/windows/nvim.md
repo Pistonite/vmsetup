@@ -9,7 +9,8 @@ Make sure you have [zig](./zig.md) installed. This is the easiest way to get a c
     :::tip
     Either the zip or msi work. Pick the one you like
     :::
-2. Add to powershell path
+2. Add the nvim directory to PATH
+3. Set aliases in powershell
     ```powershell
     notepad $Profile
     ```
@@ -17,11 +18,10 @@ Make sure you have [zig](./zig.md) installed. This is the easiest way to get a c
     ```
     # Neovim
     $env:HOME = $env:USERPROFILE
-    $env:PATH = "C:\Program Files\Neovim\bin;$env:PATH"
     Set-Alias vim nvim
     Set-Alias vi nvim
     ```
-3. Reload powershell and you should be able to run nvim
+4. Reload powershell and you should be able to run nvim
 
 ## Packer
 ```powershell
@@ -31,6 +31,8 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ## Config
 1. Download the config files
     ```powershell
-    iwr -useb https://vmsetup.pistonite.org/dl-nvim-config.ps1 | iex
+    Invoke-WebRequest https://vmsetup.pistonite.org/dl-nvim-config.ps1 -OutFile dl-nvim-config.py
+    python dl-nvim-config.py
+    Remove-Item dl-nvim-config.py
     ```
 1. Start nvim. Follow [the normal nvim setup](/tool/nvim#install-the-plugins) from now on

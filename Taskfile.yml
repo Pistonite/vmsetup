@@ -29,9 +29,11 @@ tasks:
     cmds:
     - rm -rf src/public/home/.config/nvim
     - mkdir -p src/public/home/.config/nvim
+    # make sure we don't copy the plugins directory
     - cp ~/.config/nvim/init.lua src/public/home/.config/nvim
     - cp -r ~/.config/nvim/after src/public/home/.config/nvim
     - cp -r ~/.config/nvim/lua src/public/home/.config/nvim
+    - python nvim.py > src/public/dl-nvim-config.py
 
   bash:
     desc: Copy .bashrc from home to repo

@@ -46,6 +46,8 @@ return require("packer").startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
+    -- jdtls needs this for full suport
+    use 'mfussenegger/nvim-jdtls'
     -- other completion plugins
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
