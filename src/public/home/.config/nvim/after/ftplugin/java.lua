@@ -54,11 +54,23 @@ local config = {
                     {
                         name = "JavaSE-1.8",
                         path = vim.env.JDK8_HOME,
-                    }
+                    },
+                    {
+                        name = "JavaSE-17",
+                        path = vim.env.JDK17_HOME,
+                    },
+                    {
+                        name = "JavaSE-21",
+                        path = vim.env.JDK21_HOME,
+                    },
                 }
             }
         }
     }
 }
 require('jdtls').start_or_attach(config)
+-- jdtls specific key maps
+vim.keymap.set('n', '<leader>O', function()
+    require('jdtls').organize_imports()
+end)
 
