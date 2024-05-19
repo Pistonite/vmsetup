@@ -1,4 +1,6 @@
-require('vscode').load()
+require('vscode').setup({ })
+-- set colorscheme directly to avoid overriding devicons
+vim.cmd('colorscheme vscode')
 -- floaterm styles. They need to loaded after above
 -- to avoid being overwritten
 vim.cmd('hi Floaterm guibg=#002B36')

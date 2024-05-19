@@ -41,3 +41,9 @@ tasks:
     - cp ~/.bashrc src/public/home/.bashrc
     - txtpp -r
 
+  starship:
+    desc: Copy starship.toml from home to repo
+    cmds:
+    - cp ~/.config/starship.toml src/public/home/.config/starship.toml
+    - txtpp -r
+

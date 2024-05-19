@@ -113,10 +113,9 @@ disabled = true
 format = "[$time]($style)"
 time_format = '%H:%M'
 
-# Replace the "❯" symbol in the prompt with "➜"
 [character]
-success_symbol = "[\uf814](green)"
-error_symbol = "[\uf814](red)"
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
 
 [jobs]
 number_threshold = 1
@@ -139,7 +138,7 @@ symbol = " "
 truncate_to_repo = false
 truncation_symbol = ".../"
 use_os_path_sep = false
-read_only = " "
+read_only = " "
 
 [docker_context]
 symbol = " "
@@ -152,10 +151,10 @@ symbol = " "
 
 [git_branch]
 format = "[$symbol$branch]($style)"
-symbol = "\uf7a1 "
+symbol = " "
 
 [git_status]
-format = "[( $ahead_behind)]($style)"
+format = "[($ahead_behind)]($style)"
 behind = "[\uf433](bold red)"
 ahead = "[\uf431](bold green)"
 
@@ -191,7 +190,7 @@ symbol = " "
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = "\ue73c "
+symbol = " "
 detect_folders = ["scripts/__pycache__"]
 
 [ruby]
@@ -212,7 +211,7 @@ symbol = "ﯣ "
 
 [nodejs]
 format = "[$symbol($version )]($style)"
-symbol = "\uf898 "
+symbol = " "
 ```
 
 ## Reload the shell

@@ -1,6 +1,21 @@
 # Windows Terminal
 Setting up windows terminal
 
+## Starship
+To install starship on windows, first install it with `cargo install starship`
+Then download the config file with
+```powershell
+mkdir -p $HOME\starship
+iwr https://vmsetup.pistonite.org/home/.config/starship.toml -OutFile $HOME\starship\starship.toml
+```
+Finally add the following to the powershell profile:
+```powershell
+# Starship
+$env:STARSHIP_CONFIG = "$HOME\starship\starship.toml"
+Invoke-Expression (&starship init powershell)
+```
+Restart the terminal and you should see the starship prompt.
+
 ## Color Scheme
 Open Windows Terminal, then open Settings. On the bottom left corner there's a `Open JSON file` option.
 

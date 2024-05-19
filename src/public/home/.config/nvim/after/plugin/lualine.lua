@@ -13,6 +13,7 @@ require('lualine').setup({
             'diff',
             {
                 'diagnostics',
+                colored = true,
                 symbols = {
                     error = 'E',
                     warn = 'W',
