@@ -56,20 +56,29 @@ vim.cmd([[
 if has("win32")
     augroup YankToScript
       autocmd!
-      autocmd TextYankPost * if v:register == '+' | call writefile([getreg('+')], $HOME .. '/.vim/yank') | silent! execute '!(Get-Content $env:USERPROFILE/.vim/yank) -replace "`0","`n" | set-clipboard' | redraw! | endif
+      autocmd TextYankPost * if v:register == 'a' | call writefile([getreg('a')], $HOME .. '/.vim/yank') | silent! execute '!(Get-Content $env:USERPROFILE/.vim/yank) -replace "`0","`n" | set-clipboard' | redraw! | endif
     augroup END
 else
     augroup YankToScript
       autocmd!
-      autocmd TextYankPost * if v:register == '+' | call writefile([getreg('+')], '/tmp/yank') | silent! execute '!bash -c "source ~/.bashrc && cat /tmp/yank | websocat -1 -t -u ws://$HOST_MACHINE_IP:8881"' | redraw! | endif
+      autocmd TextYankPost * if v:register == 'a' | call writefile([getreg('a')], '/tmp/yank') | silent! execute '!bash -c "source ~/.bashrc && cat /tmp/yank | websocat -1 -t -u ws://$HOST_MACHINE_IP:8881"' | redraw! | endif
     augroup END
 endif
 ]])
 
-noremap('v', '<leader>y', '"+y')
+noremap('v', '<leader>y', '"ay')
 
 -- swap left and right buffers
 noremap('n', '<leader>w', '<cmd>NvimTreeClose<cr><C-w>r<cmd>NvimTreeOpen<cr><C-W>l')
 -- duplicate split view to other side
 noremap('n', '<leader>dl', '<C-w>l<cmd>q<cr><C-w>v') --left to right
 noremap('n', '<leader>dh', '<C-w>h<cmd>q<cr><C-w>v') --right to left
+
+-- convert between Rust /// doc and JS /** doc */
+noremap('n', '<leader>J', '0f/wBR/**<esc>A */<esc>')
+noremap('v', '<leader>J', '<esc>\'<lt>O<esc>0C/**<esc>\'>o<esc>0C */<esc><cmd>\'<lt>,\'>s/\\/\\/\\// */<cr>gv`<lt>koj=<cmd>nohl<cr>')
+noremap('n', '<leader>R', '0f*wBR///<esc>A<esc>xxx')
+noremap('v', '<leader>R', '<esc>\'<lt>dd\'>ddgv<esc><cmd>\'<lt>,\'>s/\\*/\\/\\/\\//<cr>gv`<lt>koj=<cmd>nohl<cr>')
+
+-- copilot
+noremap('i', '<A-j>', '<Plug>(copilot-accept-line)')
