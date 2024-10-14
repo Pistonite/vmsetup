@@ -4,7 +4,7 @@ const archSidebar = [
     {
         text: "Hyper-V Setup",
         items: [
-            { text: "Getting Started", link: "/" },
+            { text: "Getting Started", link: "/arch/" },
             { text: "Creating VM", link: "/hyperv/create" },
             { text: "Virtual Switch", link: "/hyperv/virtual-switch" },
             { text: "Configure VM", link: "/hyperv/configure" },
@@ -22,8 +22,42 @@ const archSidebar = [
             { text: "Configure User", link: "/arch/user" },
             { text: "Conclusion", link: "/arch/conclusion" },
         ]
-    }, {
-        text: "Install Stuff",
+    },
+];
+
+const windowsSidebar = [
+    {
+        text: "Setup Windows",
+        items: [
+            { text: "Getting Started", link: "/windows/" },
+            { text: "PowerShell 7", link: "/windows/powershell" },
+            { text: "Visual Studio", link: "/windows/visual-studio" },
+            { text: "Terminal", link: "/windows/terminal" },
+            { text: "Essentials", link: "/windows/essentials" },
+            { text: "VS Code", link: "/windows/vscode" },
+            { text: "CMake", link: "/windows/cmake" },
+            { text: "Coreutils", link: "/windows/coreutils" },
+            { text: "Other GNU Utils", link: "/windows/gnu" },
+            { text: "Notepad", link: "/windows/notepad" },
+            { text: "Zig", link: "/windows/zig" },
+            { text: "Neovim", link: "/windows/nvim" },
+            { text: "SSL Certificate", link: "/windows/cert" },
+        ]
+    }
+];
+
+const toolSidebar = [
+    {
+        text: "Essentials",
+        items: [
+            { text: "Rust", link: "/tool/rust" },
+            { text: "Git", link: "/tool/git" },
+            { text: "Python", link: "/tool/python" },
+            { text: "Dotbin", link: "/tool/dotbin" },
+        ]
+    },
+    {
+        text: "Extras",
         items: [
             { text: "Basic Tools", link: "/tool/basic-tools" },
             { text: "Version Switchers", link: "/tool/version-switcher" },
@@ -32,27 +66,11 @@ const archSidebar = [
             { text: "Task", link: "/tool/task" },
             { text: "Docker", link: "/tool/docker" },
             { text: "Node", link: "/tool/node" },
-            { text: "Python", link: "/tool/python" },
-            { text: "Git", link: "/tool/git" },
             { text: "Neovim", link: "/tool/nvim" },
             { text: "HTTPS", link: "/tool/https" },
             { text: "DevKitPro", link: "/tool/devkitpro" },
-            // { text: "TODO", link: "/tool/todo" },
         ]
     },
-];
-
-const windowsSidebar = [
-    {
-        text: "Windows Host",
-        items: [
-            { text: "Terminal", link: "/windows/terminal" },
-            { text: "Visual Studio", link: "/windows/visual-studio" },
-            { text: "Zig", link: "/windows/zig" },
-            { text: "Neovim", link: "/windows/nvim" },
-            { text: "SSL Certificate", link: "/windows/cert" },
-        ]
-    }
 ]
 
 // https://vitepress.dev/reference/site-config
@@ -65,12 +83,16 @@ export default defineConfig({
     ],
     themeConfig: {
         nav: [
-          { text: "Arch", link: "/" },
-          { text: "Windows", link: "/windows/index" }
+            { text: "Windows", link: "/windows/" },
+          { text: "Hyper-V", link: "/hyperv" },
+          { text: "Arch", link: "/arch/" },
+          { text: "Tools", link: "/tool/" },
         ],
         sidebar: {
             "/windows/": windowsSidebar,
-            "/": archSidebar,
+            "/hyperv/": archSidebar,
+            "/arch/": archSidebar,
+            "/tool/": toolSidebar,
         },
 
         socialLinks: [

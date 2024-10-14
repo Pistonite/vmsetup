@@ -1,9 +1,22 @@
 # Python
 
+## Install [pyenv]( https://github.com/pyenv/pyenv)
+
+### Windows
+Windows needs the [pyenv-win](https://github.com/pyenv-win/pyenv-win) fork.
+```bash
+git clone https://github.com/pyenv-win/pyenv-win.git "%USERPROFILE%\.pyenv"
+```
+### Linux
+Install with
+```bash
+curl https://pyenv.run | bash
+```
+
 ## Install with pyenv
 ```bash
-pyenv install 3.11
-pyenv global 3.11
+pyenv install 3.12
+pyenv global 3.12
 ```
 You might want to install other versions too
 

@@ -47,7 +47,7 @@ source ~/.cargo/env
 ## Oxidize
 Time to install more stuff with `cargo`. I will provide the configuration files later, so for now we can just install them.
 ```bash
-cargo install exa bat cargo-info cargo-watch just du-dust ripgrep fd-find starship zoxide websocat
+cargo install exa bat cargo-info cargo-watch du-dust ripgrep fd-find starship zoxide websocat
 ```
 Explanation of each package:
 
@@ -57,7 +57,6 @@ Explanation of each package:
 | `bat` | `cat` with wings | https://github.com/sharkdp/bat |
 | `cargo-info` | Cargo command for getting info about crates, and most usefully, feature flags | https://gitlab.com/imp/cargo-info |
 | `cargo-watch` | Cargo command for running command in watch mode | https://github.com/watchexec/cargo-watch |
-| `just` | Simple command runner | https://github.com/casey/just |
 | `du-dust` | Replacement for `du` | https://github.com/bootandy/dust |
 | `starship` | Shell prompt | https://starship.rs/ |
 | `zoxide` | Directory jumper | https://github.com/ajeetdsouza/zoxide |

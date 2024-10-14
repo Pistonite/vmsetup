@@ -11,9 +11,3 @@ We will be using [`nvm`](https://github.com/nvm-sh/nvm) to install and manage no
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
-
-## Pyenv
-We will be using [`pyenv`](https://github.com/pyenv/pyenv) to switch between python versions
-```bash
-curl https://pyenv.run | bash
-```
