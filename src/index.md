@@ -8,7 +8,7 @@ Welcome to the guide to setup develop/production environments exactly like the o
 
 ## Index
 - [Setup a Windows machine](./windows/index.md)
-- [Setup Hyper-V on a Windows machine](./hyperv/index.md)
-- [Setup Arch Linux](./arch/index.md)
+- Setup Hyper-V on a Windows machine (WIP)
+- Setup Arch Linux (WIP)
 - [Development Tools](./tool/index.md)
-- [Setup Production Server](./prod/index.md)
+- Setup Production Server (WIP)
