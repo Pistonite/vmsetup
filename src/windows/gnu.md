@@ -1,29 +1,44 @@
 # Other GNU Utils
+We will install other GNU utilities into `dotbin`.
+Make sure you already have that setup with [`dotbin`](../tool/dotbin.md).
 
 ## Make
-Download libintl (`libintl-0.14.4-bin.zip`) from https://gnuwin32.sourceforge.net/packages/libintl.htm
-```powershell
-Expand-Archive $env:USERPROFILE/Downloads/libintl-0.14.4-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/libintl
-sudo ln -s $env:USERPROFILE/dotbin/extra/libintl/bin/libintl3.dll $env:USERPROFILE/dotbin/extra/libintl3.dll
-rm $env:USERPROFILE/Downloads/libintl-0.14.4-bin.zip
-```
+1. Download the following, and save them in the `Downloads` directory:
+    - libintl (`libintl-0.14.4-bin.zip`) from https://gnuwin32.sourceforge.net/packages/libintl.htm
+    - libiconv2 (`libiconv-1.9.2-1-bin.zip`) from https://gnuwin32.sourceforge.net/packages/libiconv.htm
+    - make `make-3.81-bin.zip` from https://sourceforge.net/projects/gnuwin32/files/make/3.81/
+2. Extract them
+    ```powershell
+    Expand-Archive $env:USERPROFILE/Downloads/libintl-0.14.4-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/portable/libintl-0.14.4
+    Expand-Archive $env:USERPROFILE/Downloads/libiconv-1.9.2-1-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/portable/libiconv-1.9.2-1
+    Expand-Archive $env:USERPROFILE/Downloads/make-3.81-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/portable/make-3.81
+    ```
+3. Create link configuration
+    ```powershell
+    code $env:USERPROFILE/dotbin/extra/portable/link
+    ```
+    Then add the following
 
-Download libiconv2 (`libiconv-1.9.2-1-bin.zip`) from https://gnuwin32.sourceforge.net/packages/libiconv.htm
-```powershell
-Expand-Archive $env:USERPROFILE/Downloads/libiconv-1.9.2-1-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/libiconv
-sudo ln -s $env:USERPROFILE/dotbin/extra/libiconv/bin/libiconv2.dll $env:USERPROFILE/dotbin/extra/libiconv2.dll
-sudo ln -s $env:USERPROFILE/dotbin/extra/libiconv/bin/libcharset1.dll $env:USERPROFILE/dotbin/extra/libcharset1.dll
-rm $env:USERPROFILE/Downloads/libiconv-1.9.2-1-bin.zip
-```
+    ```txt
+    libiconv-*/bin/*
+    libintl-*/bin/*
+    make-*/bin/*
+    ```
+    Then run
 
-Download `make-3.81-bin.zip` from https://sourceforge.net/projects/gnuwin32/files/make/3.81/
-```powershell
-Expand-Archive $env:USERPROFILE/Downloads/make-3.81-bin.zip -DestinationPath $env:USERPROFILE/dotbin/extra/make
-sudo ln -s $env:USERPROFILE/dotbin/extra/make/bin/make.exe $env:USERPROFILE/dotbin/extra/make.exe
-rm $env:USERPROFILE/Downloads/make-3.81-bin.zip
-```
+    ```powershell
+    sudo pwsh -c{dotbin-extra link}
+    ```
+4. Verify installation
+    ```powershell
+    make --version
+    ```
 
 ## Wget
 ```powershell
-iwr https://eternallybored.org/misc/wget/1.21.4/64/wget.exe -OutFile $env:USERPROFILE/dotbin/extra/wget.exe
+iwr https://eternallybored.org/misc/wget/1.21.4/64/wget.exe -OutFile $env:USERPROFILE/dotbin/extra/bin/wget.exe
+```
+Verify installation
+```powershell
+wget --version
 ```

@@ -7,15 +7,20 @@ Download from https://ziglang.org/download/
 
 ## Install
 1. Extract the downloaded file
-2. Move the content to `~/dotbin/extra`
-3. Create a symlink or shortcut to `zig.exe`
-
-```bash
-cd ~/dotbin/extra
-sudo ln -s path/to/zig/zig.exe zig.exe
-```
-
-## Verify
-```bash
-zig version
-```
+2. Move the content to `~/dotbin/extra/portable`
+3. Configure link
+    ```powershell
+    notepad-- $env:USERPROFILE\dotbin\extra\portable\link &
+    ```
+    Add the following
+    ```txt
+    shim:zig-*/zig.exe
+    ```
+    Then run
+    ```powershell
+    sudo pwsh -c{dotbin-extra link}
+    ```
+4. Verify installation
+    ```powershell
+    zig version
+    ```

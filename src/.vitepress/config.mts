@@ -30,13 +30,13 @@ const windowsSidebar = [
         text: "Setup Windows",
         items: [
             { text: "Getting Started", link: "/windows/" },
+            { text: "VS Code", link: "/windows/vscode" },
             { text: "PowerShell 7", link: "/windows/powershell" },
+            { text: "Environment", link: "/windows/env" },
             { text: "Visual Studio", link: "/windows/visual-studio" },
             { text: "Terminal", link: "/windows/terminal" },
             { text: "Essentials", link: "/windows/essentials" },
-            { text: "VS Code", link: "/windows/vscode" },
             { text: "CMake", link: "/windows/cmake" },
-            { text: "Coreutils", link: "/windows/coreutils" },
             { text: "Other GNU Utils", link: "/windows/gnu" },
             { text: "Notepad", link: "/windows/notepad" },
             { text: "Zig", link: "/windows/zig" },
@@ -52,20 +52,19 @@ const toolSidebar = [
         items: [
             { text: "Rust", link: "/tool/rust" },
             { text: "Git", link: "/tool/git" },
-            { text: "Python", link: "/tool/python" },
             { text: "Dotbin", link: "/tool/dotbin" },
+            { text: "Python", link: "/tool/python" },
+            { text: "Node", link: "/tool/node" },
         ]
     },
     {
         text: "Extras",
         items: [
             { text: "Basic Tools", link: "/tool/basic-tools" },
-            { text: "Version Switchers", link: "/tool/version-switcher" },
             { text: "Bun", link: "/tool/bun" },
             { text: "Configure Shell", link: "/tool/config" },
             { text: "Task", link: "/tool/task" },
             { text: "Docker", link: "/tool/docker" },
-            { text: "Node", link: "/tool/node" },
             { text: "Neovim", link: "/tool/nvim" },
             { text: "HTTPS", link: "/tool/https" },
             { text: "DevKitPro", link: "/tool/devkitpro" },
