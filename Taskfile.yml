@@ -6,23 +6,18 @@ tasks:
     aliases: [i]
     cmds:
       - cargo install txtpp --features cli
-      - bun i
+      - npm i
 
   dev:
     desc: Run local dev server
     cmds:
-    - bunx vitepress dev src --host
+    - npx vitepress dev src --host
 
   build:
     desc: Build the app locally
     cmds:
     - txtpp verify -r
-    - bunx vitepress build src
-
-  serve:
-    desc: Serve the built app locally
-    cmds:
-    - bun serve.ts
+    - npx vitepress build src
 
   nvim:
     desc: Copy nvim configs from home to repo
@@ -45,5 +40,4 @@ tasks:
     desc: Copy starship.toml from home to repo
     cmds:
     - cp ~/.config/starship.toml src/public/home/.config/starship.toml
-    - txtpp -r
 

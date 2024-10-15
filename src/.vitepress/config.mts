@@ -60,6 +60,7 @@ const toolSidebar = [
     {
         text: "Extras",
         items: [
+            { text: "Starship", link: "/tool/starship" },
             { text: "Basic Tools", link: "/tool/basic-tools" },
             { text: "Bun", link: "/tool/bun" },
             { text: "Configure Shell", link: "/tool/config" },

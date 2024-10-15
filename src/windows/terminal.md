@@ -86,27 +86,10 @@ scroll down, and change Padding to 2 and scroll bar visibility to hidden
 ## Title bar
 Go to Appearance, then turn off "Hide the title bar" and "Always show tabs"
 
-## Starship.rs
-Starship is the rust-based command prompt that I use.
-
-1. Install [Rust toolchain](https://rustup.rs/)
-2. Install starship with `cargo install starship`
-
-Then download the config file with
-```powershell
-mkdir -p $HOME\starship
-iwr https://vmsetup.pistonite.org/home/.config/starship.toml -OutFile $HOME\starship\starship.toml
-```
-Finally add the following to the powershell profile:
-```powershell
-# Starship
-$env:STARSHIP_CONFIG = "$HOME\starship\starship.toml"
-Invoke-Expression (&starship init powershell)
-```
-Restart the terminal and you should see the starship prompt.
+## Shell Prompt
+See [`Starship`](../tool/starship.md) for setting up the shell prompt I use.
 
 ## Sudo for Windows
 Currently, you must be on the **Insider Dev Channel** to use sudo for Windows. See https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/
 
 If you are not planning to switch, simply run the command as an administrator.
-

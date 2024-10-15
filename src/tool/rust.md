@@ -15,3 +15,9 @@ After install, load the environment with
 ```bash
 source ~/.cargo/env
 ```
+
+## Extensions
+Install these `cargo` extensions, which are used by some of my projects (and are generally useful)
+```bash
+cargo install cargo-binstall cargo-info cargo-watch cargo-expand
+```

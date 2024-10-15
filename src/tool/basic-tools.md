@@ -29,25 +29,10 @@ rm -rf yay
 Unlike `pacman`, when using `yay` to install, you do not need to run it with `sudo`
 :::
 
-
-## Rust
-We will install [Rust](https://rustup.rs/) as the first thing, so we can install some additional tools with `cargo`.
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Enter `1` and hit Enter to install to the default locations
-
-After install, load the environment with
-```bash
-source ~/.cargo/env
-```
-
 ## Oxidize
 Time to install more stuff with `cargo`. I will provide the configuration files later, so for now we can just install them.
 ```bash
-cargo install exa bat cargo-info cargo-watch du-dust ripgrep fd-find starship zoxide websocat
+cargo install exa bat cargo-info cargo-watch du-dust ripgrep fd-find zoxide websocat
 ```
 Explanation of each package:
 
@@ -58,7 +43,6 @@ Explanation of each package:
 | `cargo-info` | Cargo command for getting info about crates, and most usefully, feature flags | https://gitlab.com/imp/cargo-info |
 | `cargo-watch` | Cargo command for running command in watch mode | https://github.com/watchexec/cargo-watch |
 | `du-dust` | Replacement for `du` | https://github.com/bootandy/dust |
-| `starship` | Shell prompt | https://starship.rs/ |
 | `zoxide` | Directory jumper | https://github.com/ajeetdsouza/zoxide |
 | `ripgrep` | Search tool (telescope.nvim requires it) | https://github.com/BurntSushi/ripgrep |
 | `fd-find` | File find tool (telescope.nvim requires it) | https://github.com/sharkdp/fd |
