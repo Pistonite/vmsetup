@@ -39,6 +39,7 @@ git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
     ```
 - Linux: add the following to `.bashrc`
     ```bash
+    # Pyenv
     export PYENV_ROOT=$HOME/dotbin/extra/portable/pyenv
     eval "$(pyenv init -)"
     ```
@@ -83,6 +84,7 @@ Add the following to `PATH`
     ```
 - Linux:
     ```bash
+    # Dotbin
     export PATH=$PATH:$HOME/dotbin/extra/symlink:$HOME/dotbin/extra/bin
     ```
 

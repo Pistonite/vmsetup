@@ -1,6 +1,11 @@
 # Starship
 [`Starship`](https://starship.rs/) is the shell prompt I use
 
+## Prerequisites
+- [Rust](./rust.md)
+- [dotbin](./dotbin.md) - For Coreutils on Windows
+- Make sure PowerShell 7 is also setup for installation on Windows
+
 ## Install
 ```bash
 cargo install starship

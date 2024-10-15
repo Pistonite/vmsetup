@@ -13,10 +13,12 @@ Download from https://ziglang.org/download/
     notepad-- $env:USERPROFILE\dotbin\extra\portable\link &
     ```
     Add the following
+
     ```txt
     shim:zig-*/zig.exe
     ```
     Then run
+    
     ```powershell
     sudo pwsh -c{dotbin-extra link}
     ```
