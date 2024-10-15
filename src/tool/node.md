@@ -17,7 +17,10 @@ Before installing `nvm`, make sure existing node installations are uninstalled
     $dotbin_nvm=$env:USERPROFILE+"\dotbin\extra\portable\nvm"
     [System.Environment]::SetEnvironmentVariable('NVM_HOME',$dotbin_nvm,"User")
     [System.Environment]::SetEnvironmentVariable('NVM_SYMLINK',$dotbin_nvm+"\symlink","User")
-    [System.Environment]::SetEnvironmentVariable('PATH',[System.Environment]::GetEnvironmentVariable('PATH', "User")+';%NVM_HOME%;%NVM_SYMLINK%',"User")
+    $path=[System.Environment]::GetEnvironmentVariable('PATH', "User")
+    if (-not($path -match ";$")) { $path+=";" }
+    $path += $dotbin_nvm+";"+$dotbin_nvm+"\symlink"
+    [System.Environment]::SetEnvironmentVariable('PATH',$path,"User")
     ```
 4. Configure Settings
     ```powershell

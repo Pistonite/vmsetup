@@ -80,7 +80,7 @@ After that, also update treesitter and Mason tools
 ### Works out-of-box with Mason
 The following should work mostly out-of-box when installing through Mason:
 - `rust-analyzer`
-- `typescript-language-server
+- `typescript-language-server`
 - `eslint-lsp`
 
 ### C/C++ (`clangd`)

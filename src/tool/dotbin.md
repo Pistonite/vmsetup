@@ -49,15 +49,15 @@ Restart your shell, then:
     ```powershell
     pyenv install 3.12
     pyenv global 3.12
-    python $env:USERPROFILE\dotbin\script\_setup.py $PROFILE
     pip install -r $env:USERPROFILE\dotbin\requirements.txt
+    python $env:USERPROFILE\dotbin\script\_setup.py $PROFILE
     ```
 - Linux:
     ```bash
     pyenv install 3.12
     pyenv global 3.12
-    python ~/dotbin/script/_setup.py ~/.bashrc
     pip install -r ~/dotbin/requirements.txt
+    python ~/dotbin/script/_setup.py ~/.bashrc
     ```
 
 ## Coreutils (Windows)
@@ -76,7 +76,10 @@ Then, add the following to the PowerShell Profile
 Add the following to `PATH`
 - Windows:
     ```powershell
-    [System.Environment]::SetEnvironmentVariable('PATH', [System.Environment]::GetEnvironmentVariable('PATH', "User") + ';%USERPROFILE%\dotbin\extra\symlink;%USERPROFILE%\dotbin\extra\bin', "User")
+    $path=[System.Environment]::GetEnvironmentVariable('PATH', "User")
+    if (-not($path -match ";$")) { $path+=";" }
+    $path+=$env:USERPROFILE+"\dotbin\extra\symlink;"+$env:USERPROFILE+"\dotbin\extra\bin"
+    [System.Environment]::SetEnvironmentVariable('PATH', $path, "User")
     ```
 - Linux:
     ```bash

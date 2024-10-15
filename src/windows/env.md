@@ -6,6 +6,7 @@ Set some environment variables that tools use
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('HOME',$env:USERPROFILE,"User")
+[System.Environment]::SetEnvironmentVariable('EDITOR','nvim',"User")
 ```
 
 ## PowerShell Profile
