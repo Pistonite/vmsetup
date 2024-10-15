@@ -54,6 +54,16 @@ eval "$(pyenv virtualenv-init -)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+# DENO =========================================
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # HOME/BIN =====================================
 export PATH="$HOME/bin:$PATH"
 
+# MEGATON ======================================
+export MEGATON_HOME="$HOME/dev/megaton"
+export PATH="$MEGATON_HOME/megaton-hammer/target/release:$PATH"
+
+# GO ===========================================
+export PATH=/usr/local/go/bin:$PATH

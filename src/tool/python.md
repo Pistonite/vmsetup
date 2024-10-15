@@ -1,11 +1,5 @@
 # Python
-
-## Install with pyenv
-```bash
-pyenv install 3.11
-pyenv global 3.11
-```
-You might want to install other versions too
+Python is already installed with [`dotbin`](./dotbin.md)
 
 ## Virtual Environments
 It's often useful to create virtual environments for projects, so you don't install packages to the global environment.

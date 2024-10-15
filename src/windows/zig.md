@@ -1,10 +1,26 @@
 # Zig
 Zig is a programming language and its compiler can also compile C.
+It's here to compile tree-sitter parsers for neovim
 
 ## Download
 Download from https://ziglang.org/download/
 
 ## Install
 1. Extract the downloaded file
-2. Move the content to `C:\Program Files\zig` (or any place you like)
-3. Add `C:\Program Files\zig` to PATH (or the place you chose)
+2. Move the content to `~/dotbin/extra/portable`
+3. Configure link
+    ```powershell
+    notepad-- $env:USERPROFILE\dotbin\extra\portable\link &
+    ```
+    Add the following
+    ```txt
+    shim:zig-*/zig.exe
+    ```
+    Then run
+    ```powershell
+    sudo pwsh -c{dotbin-extra link}
+    ```
+4. Verify installation
+    ```powershell
+    zig version
+    ```

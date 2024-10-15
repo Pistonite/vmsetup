@@ -5,32 +5,38 @@ I made my configs from 2 tutorials:
 
 (And of course copying from the examples provided by the plugins)
 
-## packer.nvim
-Install `packer.nvim`, which is the plugin manager.
-```bash
-yay -Syu nvim-packer-git
-```
+First, make sure you have installed `nvim` on the system:
+- Windows: [Neovim](../windows/nvim.md)
+- Linux: TODO
 
-## Get the configs
-My configs are on [GitHub](https://github.com/Pistonite/vmsetup/tree/main/src/public/home/.config/nvim)
-
-I made a script to `curl` them to the right places. If you want to use them, backup your existing configs
-```bash
-mv ~/.config/nvim ~/.config/nvim.bak
-```
-Then download and run the script
-```bash
-curl -o dl-nvim-config.py https://vmsetup.pistonite.org/dl-nvim-config.py
-python dl-nvim-config.py
-rm dl-nvim-config.py
-```
+<!-- ## packer.nvim -->
+<!-- Install `packer.nvim`, which is the plugin manager. -->
+<!-- ```bash -->
+<!-- yay -Syu nvim-packer-git -->
+<!-- ``` -->
+<!--  -->
+<!-- ## Get the configs -->
+<!-- My configs are on [GitHub](https://github.com/Pistonite/vmsetup/tree/main/src/public/home/.config/nvim) -->
+<!--  -->
+<!-- I made a script to `curl` them to the right places. If you want to use them, backup your existing configs -->
+<!-- ```bash -->
+<!-- mv ~/.config/nvim ~/.config/nvim.bak -->
+<!-- ``` -->
+<!-- Then download and run the script -->
+<!-- ```bash -->
+<!-- curl -o dl-nvim-config.py https://vmsetup.pistonite.org/dl-nvim-config.py -->
+<!-- python dl-nvim-config.py -->
+<!-- rm dl-nvim-config.py -->
+<!-- ``` -->
 
 ## Install the plugins
 Start neovim
 ```bash
 nvim
 ```
-You will see some errors because the plugins are not installed. It's OK. Run the following command to install them
+You will see some errors because the plugins are not installed. It's OK. 
+Press `Shift+G` to go to the bottom and `Enter` to continue. Then,
+run the following command to install them
 ```vim
 :PackerSync
 ```
@@ -46,9 +52,15 @@ Then follow on-screen instructions.
 You can use `:Copilot status` to check at anytime if it is enabled
 
 ## Yank to host clipboard
-Since the VM is headless, there's no clipboard provider to support the `+` register. So I made a simple python program [`ws-clipboard`](https://github.com/Pistonight/ws-clipboard) that starts a websocket server and stores whatever it receives into the clipboard.
+`dotbin` has a utility `wsclip` that starts a websocket server that copies inbound messages into clipboard.
+This is useful for copying text from headless VM to the host. All you need is setup
+```bash
+export HOST_MACHINE_IP=192.168.xxx.xxx
+```
 
 You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it over to the host. On windows, it uses powershell's `Set-Clipboard` command so you don't need to do extra setup.
+
+Currently, it doesn't support copying directly from Linux to system clipboard. This should change when I get a real Linux machine.
 
 ## Update
 To update the plugins/packages/tools, run
@@ -62,67 +74,7 @@ After that, also update treesitter and Mason tools
 ```
 
 ## Key mappings
-Here are some of my key mappings. I use the default leader key.
-### Normal operations
-| Key | Action | Plugin |
-|-|-|-|
-|`<leader>0`|Toggle relative line numbers|N/A|
-|`<leader> `|Turn off search highlight|N/A|
-|`<A-j>`|(Visual mode) move selected lines down|N/A|
-|`<A-k>`|(Visual mode) move selected lines up|N/A|
-|`<C-W>>`|Increase window width by 20|N/A|
-|`<C-W><`|Decrease window width by 20|N/A|
-|`<C-W>+`|Increase window height by 10|N/A|
-|`<C-W>-`|Decrease window height by 10|N/A|
-|`<leader>w`|Switch left and right (rotate buffer positions)|N/A|
-|`<leader>dh`|Clone right panel to left panel|N/A|
-|`<leader>dl`|Clone left panel to right panel|N/A|
-|`<leader>c`|Comment out line/selection|N/A|
-|`<leader>u`|Toggle undotree|undotree|
-|`<leader>y`|Yank selection to host clipboard|N/A|
-|`<leader>vg`|Grep in opened files|telescope|
-|`<leader>gs`|Git status|telescope|
-
-
-### File switching
-| Key | Action | Plugin |
-|-|-|-|
-|`<leader>A`|Add file to Harpoon|harpoon|
-|`<leader>s`|Toggle Harpoon menu|harpoon|
-|`<leader>1`|Go to 1 in Harpoon|N/A|
-|`<leader>2`|Go to 2 in Harpoon|N/A|
-|`<leader>3`|Go to 3 in Harpoon|N/A|
-|`<leader>ff`|Find file in workspace|telescope|
-|`<leader>gg`|Find git files|telescope|
-|`<leader>fg`|Find string in workspace|telescope|
-|`<leader>fd`|Find diagnostics in workspace|telescope|
-|`<leader>fb`|Find file in opened files|telescope|
-
-### LSP
-| Key | Action | Plugin |
-|-|-|-|
-|`<leader>r`|Rename symbol|lsp-zero/builtin|
-|`<leader>f`|Format|lsp-zero/builtin|
-|'K'| Hover action|builtin|
-|`gr`|Find reference|telescope|
-|`gd`|Find definition|telescope|
-|`gt`|Find type of symbol under cursor|lsp-zero/builtin|
-|`gi`|Find implementation|telescope|
-|`<leader>vd`|View diagnostics of current file|telescope|
-|`<leader>vs`|View symbols of current file|telescope|
-|`<leader>vw`|View symbols of workspace|telescope|
-|`<C-n>`|Trigger completion|N/A|
-|`<C-e>`|Abort completion|N/A|
-|`<A-j>`|Go down in completion menu|N/A|
-|`<A-k>`|Go up in completion menu|N/A|
-
-### Terminal
-| Key | Action | Plugin |
-|-|-|-|
-|`<C-W>`|Go to normal mode if in terminal mode|N/A|
-|`<leader><C-\>`|Open new terminal|vim-floaterm|
-|`<C-\>`|Toggle floating terminal | vim-floaterm|
-|`<C-n>`|Cycle through floating terminals |vim-floaterm|
+- See [here](/home/.config/nvim/lua/keys.lua) for the raw key mappings
 
 ## Language-specific LSP Setups
 ### Works out-of-box with Mason

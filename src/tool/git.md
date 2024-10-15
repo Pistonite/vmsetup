@@ -1,5 +1,7 @@
 # Git
-Git is already installed, but we need to configure it.
+Git should already installed on most Linux systems, but we need to configure it.
+
+On Windows, install it from https://git-scm.com/downloads/win
 
 ## User
 Replace `Your Name` and `Your Email` with your name and email.

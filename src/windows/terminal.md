@@ -1,20 +1,9 @@
 # Windows Terminal
-Setting up windows terminal
+Windows Terminal should come pre-installed with newer versions of Windows.
+If it's not, you can install it in the Microsoft Store.
 
-## Starship
-To install starship on windows, first install it with `cargo install starship`
-Then download the config file with
-```powershell
-mkdir -p $HOME\starship
-iwr https://vmsetup.pistonite.org/home/.config/starship.toml -OutFile $HOME\starship\starship.toml
-```
-Finally add the following to the powershell profile:
-```powershell
-# Starship
-$env:STARSHIP_CONFIG = "$HOME\starship\starship.toml"
-Invoke-Expression (&starship init powershell)
-```
-Restart the terminal and you should see the starship prompt.
+## Default profile
+To set PowerShell 7 as the default startup: Open Windows Terminal, then open Settings, Under Startup > Default profile, select "PowerShell".
 
 ## Color Scheme
 Open Windows Terminal, then open Settings. On the bottom left corner there's a `Open JSON file` option.
@@ -86,7 +75,7 @@ Replace the `"actions"` section with my key bindings:
 ```
 
 ## Font
-If you need a nerd font you can download from here: https://www.nerdfonts.com/font-downloads
+Download `Hack Nerd Font` from here: https://www.nerdfonts.com/font-downloads
 
 Then open Windows Terminal > Settings. Under Profiles select Defaults > Appearance, and change the color scheme and font.
 
@@ -96,3 +85,28 @@ scroll down, and change Padding to 2 and scroll bar visibility to hidden
 
 ## Title bar
 Go to Appearance, then turn off "Hide the title bar" and "Always show tabs"
+
+## Starship.rs
+Starship is the rust-based command prompt that I use.
+
+1. Install [Rust toolchain](https://rustup.rs/)
+2. Install starship with `cargo install starship`
+
+Then download the config file with
+```powershell
+mkdir -p $HOME\starship
+iwr https://vmsetup.pistonite.org/home/.config/starship.toml -OutFile $HOME\starship\starship.toml
+```
+Finally add the following to the powershell profile:
+```powershell
+# Starship
+$env:STARSHIP_CONFIG = "$HOME\starship\starship.toml"
+Invoke-Expression (&starship init powershell)
+```
+Restart the terminal and you should see the starship prompt.
+
+## Sudo for Windows
+Currently, you must be on the **Insider Dev Channel** to use sudo for Windows. See https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/
+
+If you are not planning to switch, simply run the command as an administrator.
+
