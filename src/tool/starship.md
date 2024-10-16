@@ -1,6 +1,15 @@
 # Starship
 [`Starship`](https://starship.rs/) is the shell prompt I use
 
+:::warning
+Starship has integration for tools like `node` and `git`. This is good aesthetically but will make the terminal slow on lower-end devices or large repos!!!
+
+See https://github.com/starship/starship/issues/301
+:::
+:::warning
+Starship uses `libgit2` for integration with `git`, and will not work if a custom version of `git` is required.
+:::
+
 ## Prerequisites
 - [Rust](./rust.md)
 - [dotbin](./dotbin.md) - For Coreutils on Windows

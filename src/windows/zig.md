@@ -15,7 +15,7 @@ Download from https://ziglang.org/download/
     Add the following
 
     ```txt
-    shim:zig-*/zig.exe
+    zig-*/zig.exe
     ```
     Then run
     
