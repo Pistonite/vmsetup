@@ -27,21 +27,26 @@ const archSidebar = [
 
 const windowsSidebar = [
     {
-        text: "Setup Windows",
+        text: "Windows Essentials",
         items: [
             { text: "Getting Started", link: "/windows/" },
-            { text: "VS Code", link: "/windows/vscode" },
-            { text: "PowerShell 7", link: "/windows/powershell" },
-            { text: "Environment", link: "/windows/env" },
             { text: "Visual Studio", link: "/windows/visual-studio" },
+            { text: "Setup Essentials", link: "/windows/essentials" },
+        ]
+    },
+    {
+        text: "Setup Windows",
+        items: [
+            { text: "Environment", link: "/windows/env" },
             { text: "Terminal", link: "/windows/terminal" },
-            { text: "Essentials", link: "/windows/essentials" },
+            { text: "VS Code", link: "/windows/vscode" },
             { text: "CMake", link: "/windows/cmake" },
             { text: "Other GNU Utils", link: "/windows/gnu" },
             { text: "Notepad", link: "/windows/notepad" },
             { text: "Zig", link: "/windows/zig" },
             { text: "Neovim", link: "/windows/nvim" },
-            { text: "SSL Certificate", link: "/windows/cert" },
+            { text: "Dev Certificate", link: "/windows/cert" },
+            { text: "Next Steps", link: "/windows/next"}
         ]
     }
 ];
@@ -53,6 +58,18 @@ const toolSidebar = [
             { text: "Rust", link: "/tool/rust" },
             { text: "Git", link: "/tool/git" },
             { text: "Dotbin", link: "/tool/dotbin" },
+        ]
+    },
+    {
+        text: "Recommended",
+        items: [
+            { text: "Starship", link: "/tool/starship" },
+            { text: "Task", link: "/tool/task" },
+        ]
+    },
+    {
+        text: "Runtime/Toolchain",
+        items: [
             { text: "Python", link: "/tool/python" },
             { text: "Node", link: "/tool/node" },
         ]
@@ -60,11 +77,10 @@ const toolSidebar = [
     {
         text: "Extras",
         items: [
-            { text: "Starship", link: "/tool/starship" },
+            
             { text: "Basic Tools", link: "/tool/basic-tools" },
-            { text: "Bun", link: "/tool/bun" },
             { text: "Configure Shell", link: "/tool/config" },
-            { text: "Task", link: "/tool/task" },
+            
             { text: "Docker", link: "/tool/docker" },
             { text: "Neovim", link: "/tool/nvim" },
             { text: "HTTPS", link: "/tool/https" },

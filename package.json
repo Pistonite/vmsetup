@@ -1,7 +1,7 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.15",
-    "vue": "^3.3.4"
+    "vitepress": "^1.4.1",
+    "vue": "^3.5.12"
   }
 }

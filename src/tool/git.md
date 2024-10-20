@@ -1,7 +1,8 @@
 # Git
-Git should already installed on most Linux systems, but we need to configure it.
 
 On Windows, install it from https://git-scm.com/downloads/win
+
+On Linux, install it from your package manager.
 
 ## User
 Replace `Your Name` and `Your Email` with your name and email.

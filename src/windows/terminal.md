@@ -89,7 +89,3 @@ Go to Appearance, then turn off "Hide the title bar" and "Always show tabs"
 ## Shell Prompt
 See [`Starship`](../tool/starship.md) for setting up the shell prompt I use.
 
-## Sudo for Windows
-Currently, you must be on the **Insider Dev Channel** to use sudo for Windows. See https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/
-
-If you are not planning to switch, simply run the command as an administrator.

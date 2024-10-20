@@ -20,7 +20,7 @@ Download from https://ziglang.org/download/
     Then run
     
     ```powershell
-    sudo pwsh -c{dotbin-extra link}
+    sudo dotbin-link
     ```
 4. Verify installation
     ```powershell

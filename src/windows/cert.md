@@ -1,4 +1,4 @@
-# SSL Certificate
+# Dev Certificate
 Sometimes you need to test web features that are only available in secure context.
 This section covers how to create a self-signed certificate trusted by the Windows Host, that the VM can then use to host
 a development server with https.

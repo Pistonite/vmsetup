@@ -17,21 +17,13 @@ Before installing `nvm`, make sure existing node installations are uninstalled
     $dotbin_nvm=$env:USERPROFILE+"\dotbin\extra\portable\nvm"
     [System.Environment]::SetEnvironmentVariable('NVM_HOME',$dotbin_nvm,"User")
     [System.Environment]::SetEnvironmentVariable('NVM_SYMLINK',$dotbin_nvm+"\symlink","User")
-    $path=[System.Environment]::GetEnvironmentVariable('PATH', "User")
-    if (-not($path -match ";$")) { $path+=";" }
-    $path += $dotbin_nvm+";"+$dotbin_nvm+"\symlink"
-    [System.Environment]::SetEnvironmentVariable('PATH',$path,"User")
+    $path = $dotbin_nvm+";"+$dotbin_nvm+"\symlink;"
+    [System.Environment]::SetEnvironmentVariable('PATH',$path+[System.Environment]::GetEnvironmentVariable('PATH', "User"),"User")
     ```
 4. Configure Settings
     ```powershell
-    code $env:USERPROFILE\dotbin\extra\portable\nvm\settings.txt
-    ```
-    Add the following, replace `HOME` with the path to your home directory (default is `C:\Users\<username>`)
-    ```txt
-    root: HOME\dotbin\extra\portable\nvm
-    path: HOME\dotbin\extra\portable\nvm\symlink
-    arch: 64
-    proxy: none
+    $setting="root: $env:USERPROFILE\dotbin\extra\portable\nvm`npath: $env:USERPROFILE\dotbin\extra\portable\nvm\symlink`narch: 64`nproxy: none"
+    $setting | Out-File -FilePath $env:USERPROFILE\dotbin\extra\portable\nvm\settings.txt
     ```
 5. Restart the shell. Verify installation
     ```powershell
@@ -58,13 +50,13 @@ Before installing `nvm`, make sure existing node installations are uninstalled
     ```
 
 ## Install Node with NVM
-I only need v18 LTS. You can install other versions too
+Install node version you need
 ```bash
-nvm install 18 --lts
+nvm install 20
 ```
 It should automatically be selected as the active node version. You can also manually switch to it
 ```bash
-nvm use 18
+nvm use 20
 ```
 You can list all the versions with
 ```bash

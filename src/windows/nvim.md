@@ -16,7 +16,7 @@ Make sure these are already setup:
     ```
 3. Configure link
     ```powershell
-    code $env:USERPROFILE\dotbin\extra\portable\link
+    notepad $env:USERPROFILE\dotbin\extra\portable\link
     ```
     Add the following
 
@@ -27,16 +27,16 @@ Make sure these are already setup:
     ```
 4. Configure alias on Windows
     ```powershell
-    code $env:USERPROFILE\dotbin\extra\portable\windows-alias
+    notepad $env:USERPROFILE\dotbin\extra\portable\windows-alias
     ```
     Add the following
 
     ```txt
-    nvim.bat: vim.bat, vi.bat
+    nvim.cmd: vim.cmd, vi.cmd
     ```
 5. Create the links with 
     ```powershell
-    sudo pwsh -c{dotbin-extra link}
+    sudo dotbin-link
     ```
 6. Verify the installation
     ```powershell

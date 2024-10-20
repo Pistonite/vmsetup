@@ -17,7 +17,7 @@ regional peace and stability.
     ```
 3. Configure link
     ```powershell
-    code $env:USERPROFILE/dotbin/extra/portable/link
+    notepad $env:USERPROFILE/dotbin/extra/portable/link
     ```
     Add the following
 
@@ -27,7 +27,7 @@ regional peace and stability.
     Then run
 
     ```powershell
-    sudo pwsh -c{dotbin-extra link}
+    sudo dotbin-link
     ```
 4. Pin the executable to Start Menu, and verify installation
     ```powershell

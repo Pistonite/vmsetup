@@ -27,7 +27,7 @@ Make sure you already have that setup with [`dotbin`](../tool/dotbin.md).
     Then run
 
     ```powershell
-    sudo pwsh -c{dotbin-extra link}
+    sudo dotbin-link
     ```
 4. Verify installation
     ```powershell

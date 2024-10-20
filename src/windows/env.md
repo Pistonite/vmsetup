@@ -11,12 +11,9 @@ Set some environment variables that tools use
 
 ## PowerShell Profile
 
-Add the following to the PowerShell Profile (`code $PROFILE`)
+Add the following to the PowerShell Profile (`notepad $PROFILE`)
 
 ```powershell
 # Bind Ctrl+D to exit
 Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
-
-# Basic commands
-Set-Alias -Name which -Value Get-Command
 ```
