@@ -35,18 +35,21 @@ const windowsSidebar = [
         ]
     },
     {
-        text: "Setup Windows",
+        text: "Windows Tools",
         items: [
             { text: "Environment", link: "/windows/env" },
             { text: "Terminal", link: "/windows/terminal" },
             { text: "VS Code", link: "/windows/vscode" },
-            { text: "CMake", link: "/windows/cmake" },
-            { text: "Other GNU Utils", link: "/windows/gnu" },
             { text: "Notepad", link: "/windows/notepad" },
+            { text: "Utilities", link: "/windows/utilities" },
             { text: "Zig", link: "/windows/zig" },
-            { text: "Neovim", link: "/windows/nvim" },
-            { text: "Dev Certificate", link: "/windows/cert" },
-            { text: "Next Steps", link: "/windows/next"}
+            { text: "Next Steps", link: "/windows/next"},
+        ]
+    },
+    {
+        text: "Windows Extras",
+        items: [
+            { text: "LiveSplit", link: "/windows/livesplit" }
         ]
     }
 ];
@@ -58,6 +61,7 @@ const toolSidebar = [
             { text: "Rust", link: "/tool/rust" },
             { text: "Git", link: "/tool/git" },
             { text: "Dotbin", link: "/tool/dotbin" },
+            { text: "7-Zip", link: "/tool/7zip" },
         ]
     },
     {
@@ -65,26 +69,30 @@ const toolSidebar = [
         items: [
             { text: "Starship", link: "/tool/starship" },
             { text: "Task", link: "/tool/task" },
+            { text: "Neovim", link: "/tool/nvim" },
+            { text: "Zoxide + fzf", link: "/tool/zoxide"},
         ]
     },
     {
         text: "Runtime/Toolchain",
         items: [
             { text: "Python", link: "/tool/python" },
-            { text: "Node", link: "/tool/node" },
+            { text: "Node + Deno", link: "/tool/node" },
+            { text: "CMake", link: "/tool/cmake" },
+            { text: "Go", link: "/tool/go" },
+           // { text: "NX", link: "/tool/nx" },
         ]
     },
     {
         text: "Extras",
         items: [
+            { text: "Ninja", link: "/tool/ninja" },
+            { text: "VM Certificate", link: "/tool/https" },
             
-            { text: "Basic Tools", link: "/tool/basic-tools" },
-            { text: "Configure Shell", link: "/tool/config" },
-            
-            { text: "Docker", link: "/tool/docker" },
-            { text: "Neovim", link: "/tool/nvim" },
-            { text: "HTTPS", link: "/tool/https" },
-            { text: "DevKitPro", link: "/tool/devkitpro" },
+           // { text: "Basic Tools", link: "/tool/basic-tools" },
+           // { text: "Configure Shell", link: "/tool/config" },
+           // { text: "Docker", link: "/tool/docker" },
+           // { text: "DevKitPro", link: "/tool/devkitpro" },
         ]
     },
 ]

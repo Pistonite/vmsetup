@@ -5,7 +5,6 @@ tasks:
     desc: Install dependencies and packages
     aliases: [i]
     cmds:
-      - cargo install txtpp --features cli
       - npm i
 
   dev:
@@ -16,25 +15,7 @@ tasks:
   build:
     desc: Build the app locally
     cmds:
-    - txtpp verify -r
     - npx vitepress build src
-
-  nvim:
-    desc: Copy nvim configs from home to repo
-    cmds:
-    - rm -rf src/public/home/.config/nvim
-    - mkdir -p src/public/home/.config/nvim
-    # make sure we don't copy the plugins directory
-    - cp ~/.config/nvim/init.lua src/public/home/.config/nvim
-    - cp -r ~/.config/nvim/after src/public/home/.config/nvim
-    - cp -r ~/.config/nvim/lua src/public/home/.config/nvim
-    - python nvim.py > src/public/scripts/dl-nvim-config.py
-
-  bash:
-    desc: Copy .bashrc from home to repo
-    cmds:
-    - cp ~/.bashrc src/public/home/.bashrc
-    - txtpp -r
 
   starship:
     desc: Copy starship.toml from home to repo

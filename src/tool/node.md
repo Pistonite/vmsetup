@@ -67,3 +67,9 @@ And confirm the current node version
 node -v
 npm -v
 ```
+
+## Deno
+Deno is used for publishing packages to JSR
+```bash
+cargo install deno --locked
+```

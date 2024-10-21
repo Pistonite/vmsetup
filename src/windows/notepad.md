@@ -1,7 +1,6 @@
-# Notepad Double Decrease (Notepad--)
+# Notepad
 
-General purpose notepad for tracking misc items, when I don't want to boot
-up a full-fledged IDE.
+Notepad is useful when I don't want to open a full-fledge IDE.
 
 :::danger
 Do NOT use Notepad++. I do not condone Notepad++'s author's act of
@@ -9,27 +8,12 @@ using a popular software to publish statements intended to undermine
 regional peace and stability.
 :::
 
-1. Download `Notepad--v2.19.0-win10-portable.zip` from https://sourceforge.net/projects/notepad-dd/files/notepad-v2.19/
-   and save it in `Downloads`
-2. Extract it
-    ```powershell
-    Expand-Archive $env:USERPROFILE/Downloads/Notepad--v2.19.0-win10-portable.zip -DestinationPath $env:USERPROFILE/dotbin/extra/portable
-    ```
-3. Configure link
-    ```powershell
-    notepad $env:USERPROFILE/dotbin/extra/portable/link
-    ```
-    Add the following
+The default Notepad in Windows is actually pretty decent now, with multi-tab and session state.
 
-    ```txt
-    shim:Notepad--v*/Notepad--.exe
-    ```
-    Then run
-
+## Configuration
+1. Launch notepad
     ```powershell
-    sudo dotbin-link
+    notepad
     ```
-4. Pin the executable to Start Menu, and verify installation
-    ```powershell
-    notepad--&
-    ```
+2. Click on the settings, open `Font` and change it to `Hack Nerd Font`
+3. Scroll down and turn off `Spell check` and `Autocorrect`

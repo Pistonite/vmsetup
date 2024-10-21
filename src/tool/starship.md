@@ -19,15 +19,15 @@ Starship uses `libgit2` for integration with `git`, and will not work if a custo
 ```bash
 cargo install starship
 ```
+Then download the configuration (Same command for Windows, with `dotbin`)
+```bash
+mkdir -p ~/.config
+rm -f ~/.config/starship.toml
+curl -o ~/.config/starship.toml https://vmsetup.pistonite.org/home/.config/starship.toml
+```
 
-## Configuration
+## Shell
 - Windows:
-    - Download the configuration file
-        ```powershell
-        mkdir -p $env:USERPROFILE\.config
-        rm -f $env:USERPROFILE\.config\starship.toml
-        iwr https://vmsetup.pistonite.org/home/.config/starship.toml -OutFile $env:USERPROFILE\.config\starship.toml
-        ```
     - Open the PowerShell profile
         ```powershell
         notepad $Profile
@@ -38,12 +38,6 @@ cargo install starship
         Invoke-Expression (&starship init powershell)
         ```
 - Linux:
-    - Download the configuration file
-        ```bash
-        mkdir -p ~/.config
-        rm -f ~/.config/starship.toml
-        curl -o ~/.config/starship.toml https://vmsetup.pistonite.org/home/.config/starship.toml
-        ```
     - Add the following to `~/.bashrc`
         ```bash
         # Starship

@@ -1,33 +1,70 @@
 # Neovim
+Neovim is my editor of choice for rapid-race development.
+
+## Dependencies
+Install the following dependencies from cargo
+```bash
+cargo install ripgrep websocat fd-find
+```
+
+## Install
+Arch Linux:
+   1. `nvim` should be bootstrapped during the full install. If not, you can install with
+      ```bash
+      sudo pacman -Syu neovim
+      ```
+   2. Setup aliases
+      ```bash
+      echo "alias=vi,vim:which:nvim" >> ~/dotbin/extra/portable/link
+      dotbin-link
+      ```
+Windows:
+   1. Make sure you have [`zig`](../windows/zig.md) installed for compiling tree-sitter
+   2. Download the latest stable release from https://github.com/neovim/neovim/releases.
+      Save `nvim-win64.zip` to the `Downloads` directory
+   3. Extract it
+      ```powershell
+      7z x -y ~/Downloads/nvim-win64.zip "-o$HOME/dotbin/extra/portable"
+   4. Configure link
+      ```powershell
+      Add-Content -Path ~/dotbin/extra/portable/link -Value "alias=vi,vim:shim:nvim-win64/bin/nvim.exe`nshim:nvim-win64/bin/win32yank.exe`nshim:nvim-win64/bin/xxd.exe"
+      sudo dotbin-link
+      ```
+:::warning
+Verify installation with
+```bash
+nvim --version
+```
+:::
+
+## Packer
+Package manager for Neovim
+- Windows:
+   ```powershell
+   rm -rf $env:LOCALAPPDATA\nvim-data
+   mkdir -p "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start"
+   git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+   ```
+- Arch Linux:
+   ```bash
+   yay -Syu nvim-packer-git
+   ```
+
+## Config
+:::info
 I made my configs from 2 tutorials:
 - [ThePrimeagen's setup](https://www.youtube.com/watch?v=w7i4amO_zaE)
 - [Santiago's setup](https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/)
 
 (And of course copying from the examples provided by the plugins)
+:::
+:::warning
+Make sure to setup `dotbin` for getting the config
+:::
 
-First, make sure you have installed `nvim` on the system:
-- Windows: [Neovim](../windows/nvim.md)
-- Linux: TODO
-
-<!-- ## packer.nvim -->
-<!-- Install `packer.nvim`, which is the plugin manager. -->
-<!-- ```bash -->
-<!-- yay -Syu nvim-packer-git -->
-<!-- ``` -->
-<!--  -->
-<!-- ## Get the configs -->
-<!-- My configs are on [GitHub](https://github.com/Pistonite/vmsetup/tree/main/src/public/home/.config/nvim) -->
-<!--  -->
-<!-- I made a script to `curl` them to the right places. If you want to use them, backup your existing configs -->
-<!-- ```bash -->
-<!-- mv ~/.config/nvim ~/.config/nvim.bak -->
-<!-- ``` -->
-<!-- Then download and run the script -->
-<!-- ```bash -->
-<!-- curl -o dl-nvim-config.py https://vmsetup.pistonite.org/dl-nvim-config.py -->
-<!-- python dl-nvim-config.py -->
-<!-- rm dl-nvim-config.py -->
-<!-- ``` -->
+```bash
+python ~/dotbin/script/configure-nvim.py
+```
 
 ## Install the plugins
 Start neovim
@@ -74,7 +111,7 @@ After that, also update treesitter and Mason tools
 ```
 
 ## Key mappings
-- See [here](/home/.config/nvim/lua/keys.lua) for the raw key mappings
+- See [here](https://github.com/Pistonite/dotbin/blob/main/dotconfig/nvim/lua/keys.lua) for the raw key mappings
 
 ## Language-specific LSP Setups
 ### Works out-of-box with Mason
@@ -94,6 +131,9 @@ The following should work mostly out-of-box when installing through Mason:
 4. If additional configuration is needed, follow https://clangd.llvm.org/config.html#compileflags
 
 ### Java (`jdtls`)
+:::danger
+This configuration is experimental and unstable
+:::
 1. DO NOT install it through Mason. Instead, download from https://download.eclipse.org/jdtls/milestones
 2. Extract JDTLS from the download from step 1. Put it in some permanent location, then set the `ECLIPSE_JDTLS_HOME` variable to
 that folder.

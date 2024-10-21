@@ -46,6 +46,7 @@ git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
     # Pyenv
     export PYENV_ROOT=$HOME/dotbin/extra/portable/pyenv
     eval "$(pyenv init -)"
+    alias epyvenv='source ./venv/bin/activate'
     # Dotbin
     export PATH=$HOME/dotbin/bin:$HOME/dotbin/extra/symlink:$HOME/dotbin/extra/bin:$PATH
     ```

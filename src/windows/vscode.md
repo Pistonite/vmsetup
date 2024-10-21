@@ -9,16 +9,16 @@ VS Code is good for organizing files and has better performance in lower-end dev
     ```
 3. Extract the ZIP to `dotbin`
     ```powershell
-    Expand-Archive ~\Downloads\VSCode-win32-x64-$version.zip -DestinationPath ~\dotbin\extra\portable\vscode
+    7z x -y ~/Downloads/VSCode-win32-x64-$version.zip "-o$HOME/dotbin/extra/portable/vscode"
     ```
 4. Configure link
     ```powershell
-    Add-Content -Path ~\dotbin\extra\portable\link -Value "vscode\bin\code.cmd"
+    Add-Content -Path ~/dotbin/extra/portable/link -Value "shim:vscode/bin/code.cmd"
     sudo dotbin-link
     ```
 5. Create Portable Data Directory
     ```powershell
-    mkdir -p ~\dotbin\extra\portable\vscode\data 
+    mkdir -p ~/dotbin/extra/portable/vscode/data 
     ```
 5. Verify the installation
     ```powershell

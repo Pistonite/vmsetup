@@ -19,3 +19,22 @@ Install these `cargo` extensions, which are used by some of my projects (and are
 ```bash
 cargo install cargo-binstall cargo-info cargo-watch cargo-expand cargo-get cargo-edit
 ```
+
+## Utilities
+These are simple rust-based utilities that are useful, but not required
+```bash
+cargo install eza bat du-dust
+```
+
+| Package | Description | Link |
+|-|-|-|
+| `eza` | `ls` but better | https://github.com/eza-community/eza |
+| `bat` | `cat` with wings | https://github.com/sharkdp/bat |
+| `du-dust` | Replacement for `du` | https://github.com/bootandy/dust |
+
+I typically replace `ls` with `eza`, and use `bat`/`dust` directly.
+The `dotbin` setup will automatically use `eza` for the `ls` shim if found.
+On Linux, you can add the following to `.bashrc`:
+```bash
+alias ls="eza"
+```
