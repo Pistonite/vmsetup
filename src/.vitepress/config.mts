@@ -56,6 +56,7 @@ const archSidebar = [
             { text: "Configure the System", link: "/arch/configure" },
             { text: "Configure Boot Loader", link: "/arch/boot-loader" },
             { text: "Configure User", link: "/arch/user" },
+            { text: "Essential Tools", link: "/arch/essentials-tools" },
             { text: "Next Steps", link: "/arch/next" },
         ]
     },
@@ -77,6 +78,8 @@ const toolSidebar = [
     {
         text: "Essentials",
         items: [
+            { text: "CMake", link: "/tool/cmake" },
+            { text: "Ninja", link: "/tool/ninja" },
             { text: "Rust", link: "/tool/rust" },
             { text: "Git", link: "/tool/git" },
             { text: "Dotbin", link: "/tool/dotbin" },
@@ -97,7 +100,6 @@ const toolSidebar = [
         items: [
             { text: "Python", link: "/tool/python" },
             { text: "Node + Deno", link: "/tool/node" },
-            { text: "CMake", link: "/tool/cmake" },
             { text: "Go", link: "/tool/go" },
            // { text: "NX", link: "/tool/nx" },
         ]
@@ -105,7 +107,6 @@ const toolSidebar = [
     {
         text: "Extras",
         items: [
-            { text: "Ninja", link: "/tool/ninja" },
             { text: "VM Certificate", link: "/tool/https" },
             
            // { text: "Basic Tools", link: "/tool/basic-tools" },

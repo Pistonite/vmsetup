@@ -1,5 +1,5 @@
 # CMake
-CMake is used for a few of projects as C-family build tool
+CMake is needed on some platforms for building the tools.
 
 ## Install
 - Windows:

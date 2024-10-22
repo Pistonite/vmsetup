@@ -1,5 +1,6 @@
 # Ninja
-Ninja is a fast build system that requires an external configurator script
+Ninja is a fast build system that requires an external configurator script.
+It is needed on some platforms for building the tools.
 
 ## Install
 - Windows

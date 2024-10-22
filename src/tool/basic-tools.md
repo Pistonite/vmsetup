@@ -26,10 +26,3 @@ rm -rf ~/yay
 :::tip
 Unlike `pacman`, when using `yay` to install, you do not need to run it with `sudo`
 :::
-
-## Oxidize
-
-Explanation of each package:
-
-
-| `zoxide` | Directory jumper | https://github.com/ajeetdsouza/zoxide |
