@@ -20,6 +20,11 @@ Set some environment variables that tools use
 [System.Environment]::SetEnvironmentVariable('HOME',$env:USERPROFILE,"User")
 [System.Environment]::SetEnvironmentVariable('EDITOR','nvim',"User")
 ```
+The `VMUSER` variable is used with some scripts for the default
+user when ssh-ing into VMs.
+```powershell
+[System.Environment]::SetEnvironmentVariable('VMUSER','piston',"User")
+```
 
 ## PowerShell Profile
 

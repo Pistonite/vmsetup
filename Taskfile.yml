@@ -17,6 +17,13 @@ tasks:
     cmds:
     - npx vitepress build src
 
+  clean:
+    desc: Clean dependencies and temporaries
+    cmds:
+    - rm -rf node_modules
+    - rm -rf src/.vitepress/cache
+    - rm -rf src/.vitepress/dist
+
   starship:
     desc: Copy starship.toml from home to repo
     cmds:

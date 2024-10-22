@@ -29,6 +29,61 @@ which curl
     make --version
     ```
 
+## Sed
+:::warning
+Make sure `libiconv` and `libintl` are setup as shown above
+:::
+1. Download the following, and save them in the `Downloads` directory:
+    - regex (`regex-2.7-bin.zip`) from https://gnuwin32.sourceforge.net/packages/regex.htm
+    - sed `sed-4.2.1-bin.zip` from https://gnuwin32.sourceforge.net/packages/sed.htm
+2. Extract them
+    ```powershell
+    7z x -y ~/Downloads/regex-2.7-bin.zip "-o$HOME/dotbin/extra/portable/regex-2.7"
+    7z x -y ~/Downloads/sed-4.2.1-bin.zip "-o$HOME/dotbin/extra/portable/sed-4.2.1"
+    ```
+4. Configure link
+    ```powershell
+    Add-Content -Path ~\dotbin\extra\portable\link -Value "regex-*/bin/*`nsed-*/bin/sed.exe"
+    sudo dotbin-link
+    ```
+5. Verify installation
+    ```powershell
+    sed --version
+    ```
+
+## GnuPG
+You will need this for verifying signatures of downloaded files.
+
+1. Download and launch the installer from https://www.gnupg.org/download/index.html
+2. Copy the installation to `dotbin`
+    ```powershell
+    cp -r "C:\Program Files (x86)\gnupg" ~/dotbin/extra/portable/gnupg
+    rm ~/dotbin/extra/portable/gnupg/gnupg-uninstall.exe
+    ```
+3. Remove `GnuPG` from the `PATH` environment variable
+    ```powershell
+    $path = [System.Environment]::GetEnvironmentVariable("PATH", "Machine")
+    $path = $path | sed -r 's/C:\\Program Files \(x86\)\\gnupg\\bin//' | sed 's/;;/;/' | sed 's/;;/;/'
+    sudo pwsh -c{[System.Environment]::SetEnvironmentVariable("PATH", $path, "Machine")}
+    $path = [System.Environment]::GetEnvironmentVariable("PATH", "User")
+    $path = $path | sed -r 's/C:\\Program Files \(x86\)\\gnupg\\bin//' | sed 's/;;/;/' | sed 's/;;/;/'
+    [System.Environment]::SetEnvironmentVariable("PATH", $path, "User")
+    ```
+4. Configure link
+    ```powershell
+    Add-Content -Path ~\dotbin\extra\portable\link -Value "gnupg/bin/*.dll`ngnupg/bin/gpg.exe"
+    sudo dotbin-link
+    ```
+5. Uninstall GnuPG from the system by going into Windows Settings
+:::warning
+After restarting the shell, verify installation with
+```powershell
+which gpg
+gpg --version
+```
+:::
+
+
 ## Wget
 ```powershell
 curl -o ~/dotbin/extra/bin/wget.exe https://eternallybored.org/misc/wget/1.21.4/64/wget.exe

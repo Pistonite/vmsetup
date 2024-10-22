@@ -30,6 +30,24 @@ Search for `wheel` and uncomment this line
 %wheel ALL=(ALL) ALL
 ```
 
+## Connecting to the internet
+If you are using Ethernet or VM, the machine should already have internet access.
+
+For Wi-Fi:
+```bash
+nmcli device wifi connect <SSID> --ask
+```
+Verify connection:
+
+```bash
+ip address
+ping archlinux.org
+```
+:::warning
+The IP address of the system might change after reboot if DHCP is used, since the hostname changed.
+Note the new IP address in the output of `ip address`
+:::
+
 ## Enabling SSH
 Run
 ```bash
@@ -38,7 +56,7 @@ systemctl start sshd
 ```
 
 SSH into the VM with your new user, replace `<IP>` with the IP address of the VM
-```
+```bash
 ssh piston@<IP>
 ```
 :::warning
@@ -48,60 +66,87 @@ Your IP address might have changed. Run `ip address` to get it again
 If you can't login, make sure you have a shell set for the user that is listed in `/etc/shells`. For example `/usr/bin/bash` will not work out of the box and you need to use `/bin/bash` instead
 :::
 
-### (Optional) SSH Keys
-It's more secure to use SSH key for login and disable password login for servers. However, since the VM is on your local computer, it's not really necessary.
-
-If you still like to use SSH keys (for example, in case you type the password on stream accidentally), you can do that.
-
-In Windows Powershell, run
-```
+### Setting up SSH keys
+Generate a SSH key on the machine you are connecting from
+```bash
 ssh-keygen -t ed25519
 ```
 :::tip
-Windows use 2048 bit RSA keys by default. We use ed25519 here because it's better
-:::
-You can change the key location or use the default. Optionally you can setup a passphrase for the key.
-:::warning
-You might want to change the location if you also have an SSH key for things like GitHub
+`ssh-keygen` is also shipped in Windows with OpenSSH!
+
+For Hyper-V VM, name the key the same as the VM name so you can use
+my [`dotbin`](../tool/dotbin.md) utility for seamless login.
+See [here](../hyperv/connect.md) for more details
+
+For local VM, passphrase is not needed since it slows down login. 
+Recommended for physical machines and set it the same as your user password.
 :::
 
-Then run this in Powershell to copy the public key to the VM
-```
-type <path\to\key.pub> | ssh piston@<IP> "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+Store the public key to the VM
+```bash
+cat path/to/key.pub | ssh piston@<IP> "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 :::tip
-Credit to https://chrisjhart.com/Windows-10-ssh-copy-id/ for the powershell command. If you have WSL, you can simply use
-```
-ssh-copy-id -i <path/to/key.pub> piston@<IP>
+Credit to https://chrisjhart.com/Windows-10-ssh-copy-id/ for the powershell command.
+
+On Linux, you can also use
+```bash
+ssh-copy-id -i path/to/key.pub piston@<IP>
 ```
 :::
 
 Now you can ssh into the VM with the key
-```
+```bash
 ssh -i <path/to/key> piston@<IP>
 ```
 :::tip
-Save this as an powershell alias for easier access
+For Hyper-V, with [`dotbin`](../tool/dotbin.md) configured, try `evm <vmname>`
 :::
 
-### Disable password login
-With SSH key setup you can disable password login to be extra secure.
+### Hardening SSH Security
+With SSH enabled, we need to be extra secure to make sure no one can access our machine.
 
-1. Login via SSH with your key
-2. Edit `/etc/ssh/sshd_config`
-    ```
-    sudo nvim /etc/ssh/sshd_config
-    ```
-3. Search for `PasswordAuthentication`. Uncomment the line and change it to `no`
-    ```
-    PasswordAuthentication no
-    ```
-4. Save and exit `nvim`
-5. Restart the SSH service
-    ```
-    sudo systemctl restart sshd
-    ```
-6. Logout with `logout` or Ctrl-D, and try to login with password. It should fail.
-    ```
-    ssh piston@<IP>
-    ```
+On your target machine/VM, edit `/etc/ssh/sshd_config`
+```bash
+sudo nvim /etc/ssh/sshd_config
+```
+
+Disallow root SSH login. (Search for `PermitRootLogin` and change it to `no`)
+```
+PermitRootLogin no
+```
+
+Disallow password login (SSH key required). Search for `PasswordAuthentication`
+```
+PasswordAuthentication no
+```
+
+Use only one internet protocol if you only need one of IPv4 or IPv6. Search for `AddressFamily`
+```
+AddressFamily inet
+```
+:::tip
+Change `inet` to `inet6` for IPv6 only
+:::
+
+Save and exit `nvim`, then restart the SSH service
+```bash
+sudo systemctl restart sshd
+```
+
+Logout with `logout` or Ctrl-D, and try to login with password. It should fail.
+```bash
+ssh piston@<IP>
+```
+
+### Firewall
+Setting up firewall is recommended for mobile machines or VMs on mobile machines,
+since they will be exposed to public networks (when traveling, etc).
+
+
+:::info
+TODO
+:::
+
+
+

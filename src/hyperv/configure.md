@@ -18,7 +18,8 @@ Under `Processor`, enter the number of processors you want to use.
 This should be less than or equal to the number of logical processors your host
 computer has.
 
-My machine has 16 cores = 32 logical processors. I use put 16 processors for the VM.
+My machine has 16 cores = 32 logical processors. I put 24 processors for the VM.
+You can change this later if you need to.
 
 ## Network
 Under `Network Adapter`, select the virtual switch you created earlier.
@@ -33,5 +34,3 @@ Under `Automatic Start Action`, select the one you prefer. I use `None`.
 
 ## Automatic Stop Action
 Under `Automatic Stop Action`, select the one you prefer. I use `Turn Off the virtual machine`.
-
-Next we will install Arch Linux on the VM.

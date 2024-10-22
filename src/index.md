@@ -8,8 +8,8 @@ Welcome to the guide to setup develop/production environments exactly like the o
 - Production: Arch Linux instance running nginx + docker
 
 ## Index
-- [Setup a Windows machine](./windows/index.md)
-- Setup Hyper-V on a Windows machine (WIP)
-- Setup Arch Linux (WIP)
-- [Development Tools](./tool/index.md)
-- Setup Production Server (WIP)
+- [Setup a Windows machine](./windows/)
+- [Setup Hyper-V on a Windows machine](./hyperv/)
+- [Setup Arch Linux](./arch/)
+- [Development Tools](./tool/)
+- [Setup Production Server](./prod/)

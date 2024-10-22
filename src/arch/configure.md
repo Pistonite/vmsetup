@@ -37,26 +37,29 @@ hwclock --systohc
 ## Localization
 Edit `/etc/locale.gen`
 ```bash
-nvim /etc/local.gen
+nvim /etc/locale.gen
 ```
 Uncomment the line with `en_US.UTF-8 UTF-8`.
-
-Since this is a headless environment. I only need this locale. Uncomment other locales if you need
+:::tip
+Uncomment other locales if you need
+:::
 
 Run this to generate the locales
 ```bash
-local-gen
+locale-gen
 ```
 
 Then config the locale with 
 ```bash
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
-
+:::tip
 If you changed keyboard layout, edit `/etc/vconsole.conf` with `nvim /etc/vconsole.conf` and add this line (see https://wiki.archlinux.org/title/Installation_guide#Localization)
 ```
 KEYMAP=<Layout>
 ```
+:::
+
 
 ## Network
 Create the host name file with the following, replace `pistonite` with the host name you want (i.e. name for your VM)
@@ -81,4 +84,5 @@ Set the root password now. This is the actual root password.
 passwd
 ```
 
-Next we will set up the boot loader, which is the last setup in the OS installation.
+Next we will set up the boot loader, which is technically the last setup in the OS installation.
+We will set up user login after that so we can stop using root login.

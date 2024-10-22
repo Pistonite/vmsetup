@@ -1,30 +1,5 @@
 import { defineConfig } from "vitepress"
 
-const archSidebar = [
-    {
-        text: "Hyper-V Setup",
-        items: [
-            { text: "Getting Started", link: "/arch/" },
-            { text: "Creating VM", link: "/hyperv/create" },
-            { text: "Virtual Switch", link: "/hyperv/virtual-switch" },
-            { text: "Configure VM", link: "/hyperv/configure" },
-        ]
-    }, {
-        text: "Install Arch Linux",
-        items: [
-            { text: "Getting the Image", link: "/arch/download-iso" },
-            { text: "Boot the Installer", link: "/arch/boot-installer" },
-            { text: "Preinstall Checks", link: "/arch/preinstall-checks" },
-            { text: "Disk Setup", link: "/arch/disk-setup" },
-            { text: "Essential Packages", link: "/arch/essential-packages" },
-            { text: "Configure the System", link: "/arch/configure" },
-            { text: "Configure Boot Loader", link: "/arch/boot-loader" },
-            { text: "Configure User", link: "/arch/user" },
-            { text: "Conclusion", link: "/arch/conclusion" },
-        ]
-    },
-];
-
 const windowsSidebar = [
     {
         text: "Windows Essentials",
@@ -52,6 +27,50 @@ const windowsSidebar = [
             { text: "LiveSplit", link: "/windows/livesplit" }
         ]
     }
+];
+
+const hypervSidebar = [
+    {
+        text: "Hyper-V Setup",
+        items: [
+            { text: "Getting Started", link: "/hyperv/" },
+            { text: "Creating VM", link: "/hyperv/create" },
+            { text: "Virtual Switch", link: "/hyperv/virtual-switch" },
+            { text: "Configure VM", link: "/hyperv/configure" },
+            { text: "Connect to a VM", link: "/hyperv/connect" },
+            { text: "Next Steps", link: "/hyperv/next" },
+        ]
+    }
+];
+
+const archSidebar = [
+    {
+        text: "System Install",
+        items: [
+            { text: "Getting Started", link: "/arch/" },
+            { text: "Getting the Image", link: "/arch/download-iso" },
+            { text: "Boot Live Environment", link: "/arch/boot-installer" },
+            { text: "Preinstall Checks", link: "/arch/preinstall-checks" },
+            { text: "Disk Setup", link: "/arch/disk-setup" },
+            { text: "Essential Packages", link: "/arch/essential-packages" },
+            { text: "Configure the System", link: "/arch/configure" },
+            { text: "Configure Boot Loader", link: "/arch/boot-loader" },
+            { text: "Configure User", link: "/arch/user" },
+            { text: "Next Steps", link: "/arch/next" },
+        ]
+    },
+    {
+        text: "Desktop Environment",
+        items: [
+            { text: "TODO", link: "/arch/de/" },
+        ]
+    },
+    {
+        text: "Arch Essentials",
+        items: [
+            { text: "TODO", link: "/arch/tool/essentials" },
+        ]
+    },
 ];
 
 const toolSidebar = [
@@ -111,10 +130,11 @@ export default defineConfig({
           { text: "Hyper-V", link: "/hyperv" },
           { text: "Arch", link: "/arch/" },
           { text: "Tools", link: "/tool/" },
+          { text: "Production", link: "/prod/" },
         ],
         sidebar: {
             "/windows/": windowsSidebar,
-            "/hyperv/": archSidebar,
+            "/hyperv/": hypervSidebar,
             "/arch/": archSidebar,
             "/tool/": toolSidebar,
         },
