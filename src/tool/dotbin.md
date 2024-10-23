@@ -69,6 +69,7 @@ git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
     ```bash
     # Pyenv
     export PYENV_ROOT=$HOME/dotbin/extra/portable/pyenv
+    export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init -)"
     alias epyvenv='source ./venv/bin/activate'
     # Dotbin

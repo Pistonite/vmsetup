@@ -149,10 +149,44 @@ since they will be exposed to public networks (when traveling, etc).
 See https://wiki.archlinux.org/title/Firewalld for more details
 :::
 
-First install `firewalld`
+First install `firewalld`, enable and start the service
 ```bash
 sudo pacman -S firewalld
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
 ```
+
+Check that you are connected to your network interface
+```bash
+ip address
+```
+
+The default zone should be `public` - that should also be the zone that's active right now
+```bash
+sudo firewall-cmd --get-default-zone
+sudo firewall-cmd --get-active-zone
+```
+You should see your interface listed under `public`
+
+We will first disable SSH in the `public` zone
+```bash
+sudo firewall-cmd --zone=public --remove-service ssh --permanent
+```
+
+Now, you should no longer be able to SSH into the machine.
+
+Then, move the network connection to the `home` zone
+```bash
+sudo nmcli connection modify <SSID> connection.zone home
+```
+
+You should be able to SSH into the machine again. 
+Verify that the default zone is still `public` and the active zone is now `home`
+```bash
+sudo firewall-cmd --get-default-zone
+sudo firewall-cmd --get-active-zone
+```
+Now if you are connected to public Wi-Fi, SSH service will be disabled automatically.
 
 
 

@@ -2,9 +2,6 @@
 Windows Terminal should come pre-installed with newer versions of Windows.
 If it's not, you can install it in the Microsoft Store.
 
-## Default profile
-To set PowerShell 7 as the default startup: Open Windows Terminal, then open Settings, Under Startup > Default profile, select "PowerShell".
-
 ## Color Scheme
 Open Windows Terminal, then open Settings. On the bottom left corner there's a `Open JSON file` option.
 

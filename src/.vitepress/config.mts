@@ -63,7 +63,7 @@ const archSidebar = [
     {
         text: "Desktop Environment",
         items: [
-            { text: "TODO", link: "/arch/de/" },
+            { text: "Getting Started", link: "/arch/de/" },
         ]
     },
     {

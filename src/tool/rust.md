@@ -9,6 +9,11 @@ Run the following command and use the default options
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+Open `~/.bashrc` and add the following line if it is not already there
+```bash
+# Rust
+. $HOME/.cargo/env
+```
 
 ## Extensions
 :::warning

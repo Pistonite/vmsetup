@@ -12,7 +12,7 @@ sudo pacman -Syu zip unzip wget gzip
 ```
 
 ## Bash Profile
-Open `~/.bashrc` and paste in the following
+Open `~/.bashrc` and replace the content with the following
 ```bash
 #
 # ~/.bashrc
@@ -25,6 +25,9 @@ alias vibash='nvim ~/.bashrc'
 alias vinvim='nvim ~/.config/nvim/'
 
 export EDITOR='nvim'
+
+# Temporary
+PS1='[\u@\h \W]\$ '
 ```
 :::tip
 For VM, add an extra line
@@ -42,6 +45,13 @@ Now, proceed to [Essential Tools](../tool/index.md) and install everything there
 ## yay
 `yay` is an AUR helper that helps with installing stuff from AUR.
 Since `yay` is itself an AUR package, we will need to install it from source.
+
+First install `go` so we can build it
+```bash
+sudo pacman -S go
+```
+
+Then clone the `yay` repo and build it
 ```bash
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
@@ -51,6 +61,7 @@ makepkg -si
 Make sure it is setup correctly, then remove the source
 ```bash
 yay --version
+cd ~
 rm -rf ~/yay
 ```
 :::tip
