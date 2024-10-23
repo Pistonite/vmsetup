@@ -1,8 +1,16 @@
 # Git
+Git should already be installed on Linux or as part of `dotbin` on Windows (or your own installation).
 
-On Windows, install it from https://git-scm.com/downloads/win
 
-On Linux, install it from your package manager.
+## Editor
+```bash
+git config --global core.editor nvim
+```
+
+## Line Endings
+```bash
+git config --global core.autocrlf false
+```
 
 ## User
 Replace `Your Name` and `Your Email` with your name and email.

@@ -79,8 +79,8 @@ const toolSidebar = [
         text: "Essentials",
         items: [
             { text: "Rust", link: "/tool/rust" },
-            { text: "Git", link: "/tool/git" },
             { text: "Dotbin", link: "/tool/dotbin" },
+            { text: "Git", link: "/tool/git" },
             { text: "7-Zip", link: "/tool/7zip" },
             { text: "CMake", link: "/tool/cmake" },
             { text: "Ninja", link: "/tool/ninja" },

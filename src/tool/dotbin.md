@@ -1,8 +1,9 @@
 # Dotbin
 [`dotbin`](https://github.com/Pistonight/dotbin) is my personal tool for scripting and managing portable software. On Windows, it also sets up Unix and GNU utilities.
 
-Make sure you already have [`Rust`](./rust.md) and [`git`](./git.md) installed.
-Since we need them here.
+Make sure you already have [`Rust`](./rust.md) Since we need it here.
+
+As part of the process, we will set up `pyenv`, and for Windows, `git`.
 
 :::warning
 For Windows, before we start, make sure all Python installation has been uninstalled.
@@ -14,12 +15,35 @@ Also make sure the directory you are running commands in doesn't have a `.python
 Please run the Windows commands with PowerShell 5 for now. In the Windows setup, we will setup Windows PowerShell 7, which you should use for the rest of the setup and in general.
 :::
 
+## Download Portable Git
+:::tip
+Skip this section on Linux, or another installation of Git is to be used.
+:::
+
+1. Uninstall any existing Git installations, and clean up the environment variables (`PATH`)
+2. Download the portable Git from https://git-scm.com/downloads/win
+3. Extract the self-extracting archive to `Downloads`
+4. Add the `bin` folder to path temporarily
+    ```powershell
+    $env:PATH+=";C:\Users\$env:USERNAME\Downloads\PortableGit\bin"
+    ```
+5. Verify you can run `git` from the command line
+    ```powershell
+    get-command git
+    ```
+
 ## Clone the `dotbin` and `pyenv` repos
 ### Windows
 ```powershell
 git clone https://github.com/Pistonite/dotbin.git $env:USERPROFILE/dotbin
 New-Item -ItemType Directory -Path $env:USERPROFILE/dotbin/extra/portable -Force
 git clone https://github.com/pyenv-win/pyenv-win.git $env:USERPROFILE\dotbin\extra\portable\pyenv
+```
+
+For Portable Git, move it to the `dotbin` folder, and configure links
+```powershell
+Move-Item -Path "C:\Users\$env:USERNAME\Downloads\PortableGit" -Destination $env:USERPROFILE\dotbin\extra\portable\git
+Add-Content -Path $env:USERPROFILE\dotbin\extra\portable\link -Value "git\cmd\git.exe"
 ```
 ### Linux
 ```bash
@@ -105,5 +129,10 @@ Follow the output to add the initialization script to PowerShell. (`notepad $PRO
 ```
 :::
 :::warning
-Restart the shell afterwards
+Restart the shell afterwards!
+
+On Windows, for Portable Git setup, do one last step to setup `git` in PATH
+```powershell
+sudo dotbin-link
+```
 :::
