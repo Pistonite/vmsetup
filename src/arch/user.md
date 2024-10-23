@@ -103,7 +103,7 @@ ssh -i <path/to/key> piston@<IP>
 For Hyper-V, with [`dotbin`](../tool/dotbin.md) configured, try `evm <vmname>`
 :::
 
-### Hardening SSH Security
+## Hardening SSH Security
 With SSH enabled, we need to be extra secure to make sure no one can access our machine.
 
 On your target machine/VM, edit `/etc/ssh/sshd_config`
@@ -133,20 +133,26 @@ Save and exit `nvim`, then restart the SSH service
 ```bash
 sudo systemctl restart sshd
 ```
+:::warning
+If service restart fails, check everything is typed correctly
+:::
 
 Logout with `logout` or Ctrl-D, and try to login with password. It should fail.
 ```bash
 ssh piston@<IP>
 ```
 
-### Firewall
+## Firewall
 Setting up firewall is recommended for mobile machines or VMs on mobile machines,
 since they will be exposed to public networks (when traveling, etc).
-
-
-:::info
-TODO
+:::tip
+See https://wiki.archlinux.org/title/Firewalld for more details
 :::
+
+First install `firewalld`
+```bash
+sudo pacman -S firewalld
+```
 
 
 

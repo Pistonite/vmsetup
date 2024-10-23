@@ -5,6 +5,12 @@ This can be skipped for production environment,
 as the guide makes sure everything is installed with one command
 :::
 
+## Other utilities
+Just make sure we have these, since other tools/projects might need them without asking
+```bash
+sudo pacman -Syu zip unzip wget gzip
+```
+
 ## Bash Profile
 Open `~/.bashrc` and paste in the following
 ```bash
@@ -41,7 +47,10 @@ git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
 makepkg -si
 ```
-# Run yay --version after this to confirm successful install
+
+Make sure it is setup correctly, then remove the source
+```bash
+yay --version
 rm -rf ~/yay
 ```
 :::tip

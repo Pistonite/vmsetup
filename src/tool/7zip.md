@@ -10,5 +10,7 @@
     sudo dotbin-link  
     ```
 
-## Linux
-TODO
+## Arch Linux
+```bash
+sudo pacman -Syu p7zip
+```

@@ -56,7 +56,7 @@ const archSidebar = [
             { text: "Configure the System", link: "/arch/configure" },
             { text: "Configure Boot Loader", link: "/arch/boot-loader" },
             { text: "Configure User", link: "/arch/user" },
-            { text: "Essential Tools", link: "/arch/essentials-tools" },
+            { text: "Essential Tools", link: "/arch/essential-tools" },
             { text: "Next Steps", link: "/arch/next" },
         ]
     },
@@ -78,12 +78,12 @@ const toolSidebar = [
     {
         text: "Essentials",
         items: [
-            { text: "CMake", link: "/tool/cmake" },
-            { text: "Ninja", link: "/tool/ninja" },
             { text: "Rust", link: "/tool/rust" },
             { text: "Git", link: "/tool/git" },
             { text: "Dotbin", link: "/tool/dotbin" },
             { text: "7-Zip", link: "/tool/7zip" },
+            { text: "CMake", link: "/tool/cmake" },
+            { text: "Ninja", link: "/tool/ninja" },
         ]
     },
     {

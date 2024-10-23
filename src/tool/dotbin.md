@@ -17,13 +17,13 @@ Please run the Windows commands with PowerShell 5 for now. In the Windows setup,
 ## Clone the `dotbin` and `pyenv` repos
 ### Windows
 ```powershell
-git clone https://github.com/Pistonight/dotbin.git $env:USERPROFILE/dotbin
+git clone https://github.com/Pistonite/dotbin.git $env:USERPROFILE/dotbin
 New-Item -ItemType Directory -Path $env:USERPROFILE/dotbin/extra/portable -Force
 git clone https://github.com/pyenv-win/pyenv-win.git $env:USERPROFILE\dotbin\extra\portable\pyenv
 ```
 ### Linux
 ```bash
-git clone https://github.com/Pistonight/dotbin.git ~/dotbin
+git clone https://github.com/Pistonite/dotbin.git ~/dotbin
 mkdir -p ~/dotbin/extra/portable
 git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
 ```
