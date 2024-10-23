@@ -1,6 +1,9 @@
 # Git
 Git should already be installed on Linux or as part of `dotbin` on Windows (or your own installation).
 
+:::warning
+On Windows, set up [`Environment`](../windows/env.md) before doing this!
+:::
 
 ## Editor
 ```bash

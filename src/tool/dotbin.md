@@ -92,8 +92,9 @@ The guides work with PowerShell 7.5 and above.
     ```
 4. Close PowerShell 5 (aka Windows PowerShell) and open Windows Terminal.
 5. Right click the title bar and choose "Settings"
-6. Change `defaultProfile` to `{bb6f7902-320e-4f8c-bbad-9578445057d2}`
-7. Under `profiles.list`, add a new profile at the top:
+6. Click "Open JSON settings" on the lower left
+7. Change `defaultProfile` to `{bb6f7902-320e-4f8c-bbad-9578445057d2}`
+8. Under `profiles.list`, add a new profile at the top:
     ```json
     {
         "commandline": "%USERPROFILE%\\dotbin\\extra\\portable\\pwsh\\pwsh.exe -NoLogo",
@@ -104,7 +105,7 @@ The guides work with PowerShell 7.5 and above.
         "startingDirectory": "%USERPROFILE%"
     },
     ```
-8. Restart Windows Terminal, and confirm your PowerShell version:
+9. Restart Windows Terminal, and confirm your PowerShell version:
     ```powershell
     $PSVersionTable
     ```
