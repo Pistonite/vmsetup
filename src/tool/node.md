@@ -71,5 +71,12 @@ npm -v
 ## Deno
 Deno is used for publishing packages to JSR
 ```bash
+cargo binstall deno
+```
+:::warning
+Deno doesn't have official release on GitHub that can be downloaded by `cargo-binstall`,
+so a third-party binary is used. If you want to install from source instead (slow to compile)
+```bash
 cargo install deno --locked
 ```
+:::

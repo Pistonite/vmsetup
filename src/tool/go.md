@@ -26,14 +26,20 @@ Go is a compiled, garbage collected programming language excellent at async, con
     Add-Content -Path ~/dotbin/extra/portable/link -Value "go/bin/go.exe`ngo/bin/gofmt.exe"
     sudo dotbin-link
     ```
-- Arch Linux
+- Arch Linux: Install the `go` package and make the portable package directory
     ```bash
     sudo pacman -Syu go
+    mkdir -p ~/dotbin/extra/portable/go
     ```
+    Then add the following to `~/.bashrc`
+
+    ```bash
+    # Go
+    export GOPATH=$HOME/dotbin/extra/portable/go/gopath
 
 
 :::warning
-Restart Shell after linking the executable!
+Restart Shell after making the changes to environment variables!
 
 Then verify the installtion with
 ```powershell

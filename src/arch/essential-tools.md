@@ -46,10 +46,9 @@ Now, proceed to [Essential Tools](../tool/index.md) and install everything there
 `yay` is an AUR helper that helps with installing stuff from AUR.
 Since `yay` is itself an AUR package, we will need to install it from source.
 
-First install `go` so we can build it
-```bash
-sudo pacman -S go
-```
+:::warning
+Go is required to build `yay`. Please set it up first [here](../tool/go.md)
+:::
 
 Then clone the `yay` repo and build it
 ```bash
