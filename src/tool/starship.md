@@ -23,7 +23,7 @@ Then download the configuration (Same command for Windows, with `dotbin`)
 ```bash
 mkdir -p ~/.config
 rm -f ~/.config/starship.toml
-curl -o ~/.config/starship.toml https://vmsetup.pistonite.org/home/.config/starship.toml
+curl -o ~/.config/starship.toml https://vmsetup.pistonite.dev/home/.config/starship.toml
 ```
 
 ## Shell

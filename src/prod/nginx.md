@@ -36,7 +36,7 @@ Open the config file
 ```bash
 sudo nvim /etc/nginx/nginx.conf
 ```
-Paste in the following:
+Paste in the following and change as needed
 ```nginx
 user www;
 worker_processes  auto;
@@ -57,8 +57,8 @@ http {
     #access_log  logs/access.log  main;
 
     # Set Certificate
-    ssl_certificate     /etc/nginx/certs/pistonite.org.pem;
-    ssl_certificate_key /etc/nginx/certs/pistonite.org.key;
+    ssl_certificate     /etc/nginx/certs/foo.com.pem;
+    ssl_certificate_key /etc/nginx/certs/foo.com.key;
     # Reuse SSL sessions
     ssl_session_cache   shared:SSL:10m;
     ssl_session_timeout 10m;

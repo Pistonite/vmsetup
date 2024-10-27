@@ -8,7 +8,7 @@ sudo systemctl start docker
 ```
 
 ## Overview
-For the example, assume the domain is `pistonite.org` and the subdomain/sitename
+For the example, assume the domain is `pistonite.app` and the subdomain/sitename
 is `example`. Also, assume the docker image is `pistonite/example` and the container
 will run on port `5001`
 
@@ -73,7 +73,7 @@ Then paste in the following template and change as needed
 ```nginx
 server {
     listen              443 ssl;
-    server_name         example.pistonite.org;
+    server_name         example.pistonite.app;
 
     ssl_protocols       TLSv1.2 TLSv1.3;
 

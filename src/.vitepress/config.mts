@@ -109,8 +109,6 @@ const toolSidebar = [
         items: [
             { text: "VM Certificate", link: "/tool/https" },
             
-           // { text: "Basic Tools", link: "/tool/basic-tools" },
-           // { text: "Configure Shell", link: "/tool/config" },
            // { text: "Docker", link: "/tool/docker" },
            // { text: "DevKitPro", link: "/tool/devkitpro" },
         ]

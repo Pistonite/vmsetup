@@ -2,7 +2,7 @@
 Example of a site that serves static files
 
 ## Overview
-For the example, assume the domain is `pistonite.org` and the subdomain/sitename is
+For the example, assume the domain is `pistonite.app` and the subdomain/sitename is
 `example`. Also, assume the site artifact is uploaded by a GitHub Action 
 from repo `Pistonite/example`, and named `app`.
 
@@ -70,7 +70,7 @@ Then paste in the following template and change as needed
 ```nginx
 server {
     listen              443 ssl;
-    server_name         example.pistonite.org;
+    server_name         example.pistonite.app;
 
     ssl_protocols       TLSv1.2 TLSv1.3;
 
