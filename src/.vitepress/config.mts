@@ -117,6 +117,22 @@ const toolSidebar = [
     },
 ]
 
+const prodSidebar = [
+    {
+        text: "Production",
+        items: [
+            { text: "Getting Started", link: "/prod/" },
+            { text: "Security", link: "/prod/security" },
+            { text: "Tools", link: "/prod/tools" },
+            { text: "Nginx", link: "/prod/nginx" },
+            { text: "Manage Sites", link: "/prod/sites" },
+            { text: "Static Site", link: "/prod/static-site" },
+            { text: "Docker", link: "/prod/docker" },
+            { text: "System Upgrade", link: "/prod/upgrade" },
+        ]
+    }
+]
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "Pistonite VM",
@@ -138,6 +154,7 @@ export default defineConfig({
             "/hyperv/": hypervSidebar,
             "/arch/": archSidebar,
             "/tool/": toolSidebar,
+            "/prod/": prodSidebar,
         },
 
         socialLinks: [

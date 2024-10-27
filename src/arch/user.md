@@ -119,6 +119,7 @@ PermitRootLogin no
 Disallow password login (SSH key required). Search for `PasswordAuthentication`
 ```
 PasswordAuthentication no
+PermitEmptyPasswords no
 ```
 
 Use only one internet protocol if you only need one of IPv4 or IPv6. Search for `AddressFamily`
