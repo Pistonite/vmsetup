@@ -76,7 +76,7 @@ git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
     export PATH=$HOME/dotbin/bin:$HOME/dotbin/extra/symlink:$HOME/dotbin/extra/bin:$PATH
     ```
 :::warning
-Restart the shell afterwards
+Restart the shell afterward
 :::
 
 ## Setup PowerShell 7 (Windows Only)
@@ -115,6 +115,10 @@ The guides work with PowerShell 7.5 and above.
 :::warning
 On Windows, `~` expansion only works with PowerShell 7.5 and above!
 :::
+:::tip
+To install the powershell profile for all users, add `--ps-profile AllUsersCurrentHost` for `setup.py`.
+This can be useful if the default profile maps to a OneDrive location that you don't want to use.
+:::
 ```bash
 pyenv install 3.12
 pyenv global 3.12
@@ -131,9 +135,9 @@ Follow the output to add the initialization script to PowerShell. (`notepad $PRO
 ```
 :::
 :::warning
-Restart the shell afterwards!
+Restart the shell afterward!
 
-On Windows, for Portable Git setup, do one last step to setup `git` in PATH
+On Windows, for Portable Git setup, do one last step to set up `git` in PATH
 ```powershell
 sudo dotbin-link
 ```
