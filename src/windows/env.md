@@ -30,6 +30,9 @@ Add the following to the PowerShell Profile (`notepad $PROFILE`)
 ```powershell
 # Bind Ctrl+D to exit
 Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
+Set-PSReadLineOption -Color @{
+  InlinePrediction = $PSStyle.Italic + $PSStyle.Foreground.Black
+}
 ```
 
 :::warning
