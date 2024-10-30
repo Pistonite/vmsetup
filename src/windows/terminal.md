@@ -5,32 +5,35 @@ If it's not, you can install it in the Microsoft Store.
 ## Color Scheme
 Open Windows Terminal, then open Settings. On the bottom left corner there's a `Open JSON file` option.
 
-Once you have the JSON opened, find `"schemes"` and add my scheme,
-which is mostly solarized dark with a few tweaks.
+Once you have the JSON opened, find `"schemes"` and add the catppuccin theme
+:::tip
+My theme is a modified version that uses mocha colors with a frappe background.
+For the official colors, download from https://github.com/catppuccin/windows-terminal 
+:::
 ```json
-{
-    "background": "#002B36",
-    "black": "#002B36",
-    "blue": "#268BD2",
-    "brightBlack": "#39E3D0",
-    "brightBlue": "#D5C4E0",
-    "brightCyan": "#A3DBD6",
-    "brightGreen": "#95BA8C",
-    "brightPurple": "#CC68BA",
-    "brightRed": "#CB4B16",
-    "brightWhite": "#FDF6E3",
-    "brightYellow": "#D4D3A3",
-    "cursorColor": "#FFFFFF",
-    "cyan": "#3DA191",
-    "foreground": "#CFEBED",
-    "green": "#859900",
-    "name": "Solarized Dark Piston",
-    "purple": "#D33682",
-    "red": "#DC322F",
-    "selectionBackground": "#FFFFFF",
-    "white": "#EEE8D5",
-    "yellow": "#B58900"
-},
+        {
+            "background": "#303446",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha/Frappe",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
 ```
 
 ## Key Binding

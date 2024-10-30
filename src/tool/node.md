@@ -10,7 +10,7 @@ Before installing `nvm`, make sure existing node installations are uninstalled
    and save it in the `Downloads` directory
 2. Extract it
     ```powershell
-    Expand-Archive $env:USERPROFILE/Downloads/nvm-noinstall.zip -DestinationPath $env:USERPROFILE/dotbin/extra/portable/nvm
+    7z x -y ~/Downloads/nvm-noinstall.zip "-o$HOME/dotbin/extra/portable/nvm"
     ```
 3. Configure environment variables
     ```powershell

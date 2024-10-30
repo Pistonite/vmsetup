@@ -30,7 +30,7 @@ curl -o ~/.config/starship.toml https://vmsetup.pistonite.dev/home/.config/stars
 - Windows:
     - Open the PowerShell profile
         ```powershell
-        notepad $Profile
+        vipwsh
         ```
     - Add the following
         ```powershell

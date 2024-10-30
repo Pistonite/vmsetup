@@ -75,8 +75,8 @@ git clone https://github.com/pyenv/pyenv.git ~/dotbin/extra/portable/pyenv
     # Dotbin
     export PATH=$HOME/dotbin/bin:$HOME/dotbin/extra/symlink:$HOME/dotbin/extra/bin:$PATH
     ```
-:::warning
-Restart the shell afterward
+:::danger
+Restart the shell afterward to get the new `PATH`
 :::
 
 ## Setup PowerShell 7 (Windows Only)
@@ -85,17 +85,24 @@ We will install PowerShell 7 into `dotbin` and set it as the default profile for
 The guides work with PowerShell 7.5 and above.
 
 1. Download the ZIP from the [GitHub releases](https://github.com/PowerShell/PowerShell/releases). You might need to pick a preview release.
-2. Extract the zip file and copy the contents to `dotbin/extra/portable/pwsh`
-3. Add to `PATH`
+2. Set the version for scripts
+    ```powershell
+    $version="7.5.0-preview5"
+    ```
+3. Extract it
+    ```powershell
+    Expand-Archive -Path $env:USERPROFILE\Downloads\PowerShell-$version-win-x64.zip -DestinationPath $env:USERPROFILE\dotbin\extra\portable\pwsh
+    ```
+4. Add to `PATH`
     ```powershell
     $path=$env:USERPROFILE+"\dotbin\extra\portable\pwsh;"+[System.Environment]::GetEnvironmentVariable('path', "User")
     [System.Environment]::SetEnvironmentVariable('PATH',$path,"User")
     ```
-4. Close PowerShell 5 (aka Windows PowerShell) and open Windows Terminal.
-5. Right click the title bar and choose "Settings"
-6. Click "Open JSON settings" on the lower left
-7. Change `defaultProfile` to `{bb6f7902-320e-4f8c-bbad-9578445057d2}`
-8. Under `profiles.list`, add a new profile at the top:
+5. Close PowerShell 5 (aka Windows PowerShell) and open Windows Terminal.
+6. Right click the title bar and choose "Settings"
+7. Click "Open JSON settings" on the lower left
+8. Change `defaultProfile` to `{bb6f7902-320e-4f8c-bbad-9578445057d2}`
+9. Under `profiles.list`, add a new profile at the top:
     ```json
     {
         "commandline": "%USERPROFILE%\\dotbin\\extra\\portable\\pwsh\\pwsh.exe -NoLogo",
@@ -106,7 +113,7 @@ The guides work with PowerShell 7.5 and above.
         "startingDirectory": "%USERPROFILE%"
     },
     ```
-9. Restart Windows Terminal, and confirm your PowerShell version:
+10. Restart Windows Terminal, and confirm your PowerShell version:
     ```powershell
     $PSVersionTable
     ```
@@ -114,10 +121,6 @@ The guides work with PowerShell 7.5 and above.
 ## Install Python and setup `dotbin`
 :::warning
 On Windows, `~` expansion only works with PowerShell 7.5 and above!
-:::
-:::tip
-To install the powershell profile for all users, add `--ps-profile AllUsersCurrentHost` for `setup.py`.
-This can be useful if the default profile maps to a OneDrive location that you don't want to use.
 :::
 ```bash
 pyenv install 3.12
@@ -128,7 +131,7 @@ python ~/dotbin/script/setup.py
 
 :::info
 This also sets up extra utils and [coreutils](https://github.com/uutils/coreutils) for Windows.
-Follow the output to add the initialization script to PowerShell. (`notepad $PROFILE`)
+Use `vipwsh` to edit the PowerShell profile and add the following to the profile.
 ```powershell
 # Coreutils
 . $PSScriptRoot\Initialize-Coreutils.ps1

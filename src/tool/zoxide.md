@@ -34,7 +34,7 @@ I have added `--cmd c` to use `c` instead of `z` as the command
 - Windows
     1. Open PowerShell Profile
         ```powershell
-        nodepad $Profile
+        vipwsh
         ```
     2. Add the following
         ```powershell
