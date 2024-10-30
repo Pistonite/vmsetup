@@ -65,6 +65,12 @@ Make sure to setup `dotbin` for getting the config
 ```bash
 python ~/dotbin/script/configure-nvim.py
 ```
+:::info
+To copy the config in the other direction (i.e. from the local machine to `dotbin/dotconfig`)
+```bash
+python ~/dotbin/script/configure-nvim.py update
+```
+:::
 
 ## Install the plugins
 Start neovim
@@ -88,6 +94,11 @@ Then follow on-screen instructions.
 
 You can use `:Copilot status` to check at anytime if it is enabled
 
+## Integration Config
+There are certain integration options that can be configured in `nvim/lua/integrations.lua`. 
+(The `nvim` directory is in `~/.config` on Linux and `%LOCALAPPDATA%` on Windows). These options
+enable small differences in machines and won't be overwritten when pulling new config changes.
+
 ## Yank to host clipboard
 `dotbin` has a utility `wsclip` that starts a websocket server that copies inbound messages into clipboard.
 This is useful for copying text from headless VM to the host. All you need is setup
@@ -100,6 +111,11 @@ You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it ov
 Currently, it doesn't support copying directly from Linux to system clipboard. This should change when I get a real Linux machine.
 
 ## Update
+To update the config, run
+```bash
+python ~/dotbin/script/configure-nvim.py
+```
+
 To update the plugins/packages/tools, run
 ```
 :PackerSync
