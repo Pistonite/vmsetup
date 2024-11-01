@@ -30,6 +30,14 @@ Windows:
       Add-Content -Path ~/dotbin/extra/portable/link -Value "alias=vi,vim:shim:nvim-win64/bin/nvim.exe`nshim:nvim-win64/bin/win32yank.exe`nshim:nvim-win64/bin/xxd.exe"
       sudo dotbin-link
       ```
+   5. Exclude `nvim` from Windows Defender.
+      ```powershell
+      Add-MpPreference -ExclusionPath ~/dotbin
+      Add-MpPreference -ExclusionProcess nvim
+      ```
+      :::warning
+      Run as admin!
+      :::
 :::warning
 Verify installation with
 ```bash

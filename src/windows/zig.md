@@ -2,9 +2,6 @@
 Zig is a programming language and its compiler can also compile C.
 It's here to compile tree-sitter parsers for neovim
 
-## Download
-Download ZIP from https://ziglang.org/download/
-
 ## Install
 1. Download ZIP from https://ziglang.org/download/ and put it in `Downloads`
 2. Set version for scripts
@@ -22,3 +19,11 @@ Download ZIP from https://ziglang.org/download/
     ```powershell
     zig version
     ```
+5. Exclude `zig` from Windows Defender so compilation is faster
+    ```powershell
+    Add-MpPreference -ExclusionPath ~/dotbin
+    Add-MpPreference -ExclusionProcess zig
+    ```
+    :::warning
+    Run as admin!
+    :::

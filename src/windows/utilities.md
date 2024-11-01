@@ -92,3 +92,24 @@ Verify installation
 ```powershell
 wget --version
 ```
+
+## Gzip
+:::tip
+`7z` only supports archiving with `gzip`, not pure compression/decompression
+:::
+1. Download `gzip-1.3.12-1-bin.zip` from https://gnuwin32.sourceforge.net/packages/gzip.htm
+2. Extract it
+    ```powershell
+    7z x -y ~/Downloads/gzip-1.3.12-1-bin.zip "-o$HOME/dotbin/extra/portable/gzip-1.3.12-1"
+    ```
+3. Configure link
+    ```powershell
+    Add-Content -Path ~\dotbin\extra\portable\link -Value "gzip-*/bin/gzip.exe"
+    sudo dotbin-link
+    ```
+4. Verify installation
+    ```powershell
+    gzip --version
+    ```
+
+

@@ -49,3 +49,10 @@ I have added `--cmd c` to use `c` instead of `z` as the command
         ```
 
 Now, `cd` will still behavior as normal, and `c` will use fuzzy directory jump
+
+## Windows Defender
+Run as admin and add the following to the Windows Defender exclusions
+for faster startup
+```powershell
+Add-MpPreference -ExclusionProcess zoxide
+```

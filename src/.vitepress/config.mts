@@ -5,6 +5,8 @@ const windowsSidebar = [
         text: "Windows Essentials",
         items: [
             { text: "Getting Started", link: "/windows/" },
+            { text: "Dev Drive", link: "/windows/dev-drive" },
+            { text: "System Settings", link: "/windows/system" },
             { text: "Visual Studio", link: "/windows/visual-studio" },
             { text: "Setup Essentials", link: "/windows/essentials" },
         ]

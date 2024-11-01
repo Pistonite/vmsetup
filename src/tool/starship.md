@@ -46,3 +46,10 @@ curl -o ~/.config/starship.toml https://vmsetup.pistonite.dev/home/.config/stars
 :::info
 Restart the terminal and you should see the starship prompt.
 :::
+
+## Windows Defender
+Run as admin and add the following to the Windows Defender exclusions
+for faster startup
+```powershell
+Add-MpPreference -ExclusionProcess starship
+```

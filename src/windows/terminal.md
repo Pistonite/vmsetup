@@ -77,7 +77,11 @@ Replace the `"actions"` section with my key bindings:
 ## Font
 Download `Hack Nerd Font` from here: https://www.nerdfonts.com/font-downloads
 
-Then open Windows Terminal > Settings. Under Profiles select Defaults > Appearance, and change the color scheme and font.
+Then open `Settings`. Under `Profiles`, select `Defaults` > `Appearance`, 
+and change the following:
+- `Color Scheme: Catppuccin Mocha/Frappe`
+- `Font Face: Hack Nerd Font`
+- `Automatically adjust brightness: Always`
 
 ## Padding
 In the same place (Windows Terminal > Settings. Under Profiles select Defaults > Appearance),

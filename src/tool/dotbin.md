@@ -87,7 +87,7 @@ The guides work with PowerShell 7.5 and above.
 1. Download the ZIP from the [GitHub releases](https://github.com/PowerShell/PowerShell/releases). You might need to pick a preview release.
 2. Set the version for scripts
     ```powershell
-    $version="7.5.0-preview5"
+    $version="7.5.0-preview.5"
     ```
 3. Extract it
     ```powershell
@@ -145,3 +145,13 @@ On Windows, for Portable Git setup, do one last step to set up `git` in PATH
 sudo dotbin-link
 ```
 :::
+
+## Windows Defender
+On Windows, exclude `dotbin` from Windows Defender, so tool start-up is faster.
+
+:::warning
+Run as admin!
+:::
+```powershell
+Add-MpPreference -ExclusionPath ~/dotbin
+```
