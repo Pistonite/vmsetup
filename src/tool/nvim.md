@@ -8,6 +8,11 @@ cargo install ripgrep websocat fd-find
 ```
 
 ## Install
+:::warning
+[`zig`](./zig.md) is strongly strongly recommended for Windows for compiling treesitter,
+as it is a C-compatible compiler. Otherwise you need to figure out how
+to make MSVC available through the command line, which is not convenient.
+:::
 Arch Linux:
    1. `nvim` should be bootstrapped during the full install. If not, you can install with
       ```bash
@@ -19,18 +24,17 @@ Arch Linux:
       dotbin-link
       ```
 Windows:
-   1. Make sure you have [`zig`](../windows/zig.md) installed for compiling tree-sitter
-   2. Download the latest stable release from https://github.com/neovim/neovim/releases.
+   1. Download the latest stable release from https://github.com/neovim/neovim/releases.
       Save `nvim-win64.zip` to the `Downloads` directory
-   3. Extract it
+   2. Extract it
       ```powershell
       7z x -y ~/Downloads/nvim-win64.zip "-o$HOME/dotbin/extra/portable"
-   4. Configure link
+   3. Configure link
       ```powershell
       Add-Content -Path ~/dotbin/extra/portable/link -Value "alias=vi,vim:shim:nvim-win64/bin/nvim.exe`nshim:nvim-win64/bin/win32yank.exe`nshim:nvim-win64/bin/xxd.exe"
       sudo dotbin-link
       ```
-   5. Exclude `nvim` from Windows Defender.
+   4. Exclude `nvim` from Windows Defender.
       ```powershell
       Add-MpPreference -ExclusionPath ~/dotbin
       Add-MpPreference -ExclusionProcess nvim

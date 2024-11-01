@@ -19,7 +19,6 @@ const windowsSidebar = [
             { text: "VS Code", link: "/windows/vscode" },
             { text: "Notepad", link: "/windows/notepad" },
             { text: "Utilities", link: "/windows/utilities" },
-            { text: "Zig", link: "/windows/zig" },
             { text: "Next Steps", link: "/windows/next"},
         ]
     },
@@ -103,6 +102,7 @@ const toolSidebar = [
             { text: "Python", link: "/tool/python" },
             { text: "Node + Deno", link: "/tool/node" },
             { text: "Go", link: "/tool/go" },
+            { text: "Zig", link: "/tool/zig" },
            // { text: "NX", link: "/tool/nx" },
         ]
     },
