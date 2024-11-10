@@ -75,12 +75,12 @@ Make sure to setup `dotbin` for getting the config
 :::
 
 ```bash
-python ~/dotbin/script/configure-nvim.py
+dotbin-cfg nvim
 ```
 :::info
 To copy the config in the other direction (i.e. from the local machine to `dotbin/dotconfig`)
 ```bash
-python ~/dotbin/script/configure-nvim.py update
+dotbin-cfg nvim --update
 ```
 :::
 
@@ -123,9 +123,9 @@ You can see the autocommand in `lua/keys.lua` that uses `websocat` to send it ov
 Currently, it doesn't support copying directly from Linux to system clipboard. This should change when I get a real Linux machine.
 
 ## Update
-To update the config, run
+To update the config, run the configuration script again
 ```bash
-python ~/dotbin/script/configure-nvim.py
+dotbin-cfg nvim
 ```
 
 To update the plugins/packages/tools, run

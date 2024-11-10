@@ -126,7 +126,7 @@ On Windows, `~` expansion only works with PowerShell 7.5 and above!
 pyenv install 3.12
 pyenv global 3.12
 pip install -r ~/dotbin/requirements.txt
-python ~/dotbin/script/setup.py
+python ~/dotbin/script/configure-dotbin.py
 ```
 
 :::info
@@ -145,6 +145,13 @@ On Windows, for Portable Git setup, do one last step to set up `git` in PATH
 sudo dotbin-link
 ```
 :::
+
+## Update `dotbin`
+To update dotbin in the future, run
+```bash
+git -C ~/dotbin pull
+dotbin-cfg dotbin
+```
 
 ## Windows Defender
 On Windows, exclude `dotbin` from Windows Defender, so tool start-up is faster.
