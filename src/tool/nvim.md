@@ -80,7 +80,7 @@ dotbin-cfg nvim
 :::info
 To copy the config in the other direction (i.e. from the local machine to `dotbin/dotconfig`)
 ```bash
-dotbin-cfg nvim --update
+dotbin-cfg nvim --reverse
 ```
 :::
 
