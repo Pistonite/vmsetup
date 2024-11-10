@@ -12,19 +12,20 @@ Starship uses `libgit2` for integration with `git`, and will not work if a custo
 
 ## Prerequisites
 - [Rust](./rust.md)
-- [dotbin](./dotbin.md) - For Coreutils on Windows
+- [dotbin](./dotbin.md)
 - Make sure PowerShell 7 is also setup for installation on Windows
 
 ## Install
 ```bash
 cargo install starship
 ```
-Then download the configuration (Same command for Windows, with `dotbin`)
+Then use `dotbin` to configure it
 ```bash
-mkdir -p ~/.config
-rm -f ~/.config/starship.toml
-curl -o ~/.config/starship.toml https://vmsetup.pistonite.dev/home/.config/starship.toml
+dotbin-cfg starship
 ```
+:::tip
+`dotbin-cfg starship -h` to see custom config options
+:::
 
 ## Shell
 - Windows:
