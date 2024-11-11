@@ -144,9 +144,9 @@ After that, also update treesitter and Mason tools
 ## Language-specific LSP Setups
 ### Works out-of-box with Mason
 The following should work mostly out-of-box when installing through Mason:
-- `rust-analyzer`
-- `typescript-language-server`
-- `eslint-lsp`
+- Rust: `rust-analyzer`
+- TypeScript/ECMAScript: `typescript-language-server` and `eslint-lsp`
+- Python: `pyright`
 
 ### C/C++ (`clangd`)
 1. Install it through Mason
