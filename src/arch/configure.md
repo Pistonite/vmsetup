@@ -7,6 +7,51 @@ Run
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
+### Data Drive
+:::tip
+Skip this part if you don't have additional internal data drives
+
+See https://wiki.archlinux.org/title/Fstab for additional information
+:::
+First, run `blkid` and note down the `UUID` of the data drive (not `PARTUUID`!).
+
+Then edit the fstab
+```bash
+nvim /etc/fstab
+```
+It should look something like this
+```
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda3 LABEL=root
+UUID=abecc6aa-fd5e-4bb8-babc-a6b23e542369	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1
+UUID=814D-7D51      	/boot     	vfat      	rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda2 LABEL=swap
+UUID=f74f5afa-b349-477b-a26b-bfe5fdccd48d	none      	swap      	defaults  	0 0
+```
+:::warning
+The device in the comment might be incorrect, if they are, correct them
+:::
+Add a new entry for the data drive, replace the UUID below with the UUID you found
+with `blkid`
+```
+# /dev/nvme0n1p1 LABEL=data
+UUID=dd477979-cacd-4809-9cc0-e12fd37fbc01       /media/data     ext4            nodev,nosuid    0 2
+```
+:::tip
+See wiki link above for what the options mean
+:::
+
+Finally, create the mount point
+```bash
+mkdir -p /media/data
+```
+
 ## Chroot to system
 This will change the root from the live environment to the system we just installed
 ```bash
