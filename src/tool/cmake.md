@@ -6,7 +6,7 @@ CMake is needed on some platforms for building the tools.
     1. Download CMake ZIP from https://cmake.org/download/ to `Downloads
     2. Set version for scripts
         ```powershell
-        $version="3.30.5"
+        $version="3.31.2"
     3. Extract it
         ```powershell
         7z x -y ~/Downloads/cmake-$version-windows-x86_64.zip "-o$HOME/dotbin/extra/portable"
