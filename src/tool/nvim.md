@@ -28,12 +28,16 @@ Windows:
       Save `nvim-win64.zip` to the `Downloads` directory
    2. Extract it
       ```powershell
+      rm -rf ~/dotbin/extra/portable/nvim-win64
       7z x -y ~/Downloads/nvim-win64.zip "-o$HOME/dotbin/extra/portable"
    3. Configure link
       ```powershell
       Add-Content -Path ~/dotbin/extra/portable/link -Value "alias=vi,vim:shim:nvim-win64/bin/nvim.exe`nshim:nvim-win64/bin/win32yank.exe`nshim:nvim-win64/bin/xxd.exe"
       sudo dotbin-link
       ```
+      :::tip
+      Run sudo dotbin-link --force for updating!
+      :::
    4. Exclude `nvim` from Windows Defender.
       ```powershell
       Add-MpPreference -ExclusionPath ~/dotbin

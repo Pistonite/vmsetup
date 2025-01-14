@@ -13,15 +13,19 @@ dev version from the website instead of through package managers
     1. Download ZIP from https://ziglang.org/download/ and put it in `Downloads`
     2. Set version for scripts
         ```powershell
-        $version="0.14.0-dev.2079+ba2d00663"
+        $version="0.14.0-dev.2643+fb43e91b2"
     3. Extract it
         ```powershell
+        rm -rf ~/dotbin/extra/portable/zig-*
         7z x -y ~/Downloads/zig-windows-x86_64-$version.zip "-o$HOME/dotbin/extra/portable"
     3. Configure link
         ```powershell
         Add-Content -Path ~\dotbin\extra\portable\link -Value "zig-*/zig.exe"
         sudo dotbin-link
         ```
+        :::tip
+        Run sudo dotbin-link --force for updating!
+        :::
     4. Verify installation
         ```powershell
         zig version

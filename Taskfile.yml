@@ -5,17 +5,17 @@ tasks:
     desc: Install dependencies and packages
     aliases: [i]
     cmds:
-      - npm i
+      - pnpm i
 
   dev:
     desc: Run local dev server
     cmds:
-    - npx vitepress dev src --host
+    - pnpm exec vitepress dev src --host
 
   build:
     desc: Build the app locally
     cmds:
-    - npx vitepress build src
+    - pnpm exec vitepress build src
 
   clean:
     desc: Clean dependencies and temporaries
