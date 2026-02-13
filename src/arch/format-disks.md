@@ -1,5 +1,6 @@
-# Disk Setup
+```admonish info
 This section is 1.9-1.11 of the [Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide).
+```
 
 ## List the disks
 Run `fdisk -l` to list the disks.
@@ -108,18 +109,19 @@ Device        Start       End   Sectors  Size Type
 /dev/sda3  18874368 536868863 517994496  247G Linux filesystem
 ```
 
-:::warning
+```admonish warning
 Make sure you select the right partition to format. Keep in mind it's
-the partition, not the disk
-:::
+the partition device, not the disk device
+```
+
 ### Format EFI Partition
 Replace `/dev/sda1` with the EFI partition devive
 ```bash
 mkfs.vfat -F32 /dev/sda1
 ```
-:::tip
+```admonish tip
 The difference between `vfat` and `fat` is that `vfat` supports longer file names. Read more here: https://en.wikipedia.org/wiki/File_Allocation_Table. You can also run `mkfs.fat` though.
-:::
+```
 
 ### Format Swap Partition
 Replace `/dev/sda2` with the swap partition device
@@ -134,9 +136,9 @@ Replace `/dev/sda3` with the root partition device
 mkfs.ext4 -L root /dev/sda3
 ```
 This will label it `root`
-:::tip
+```admonish tip
 Formatting the root/data partition might be a bit slower than the other partitions
-:::
+```
 
 ### Format Data Partition
 Replace `/dev/nvme1n1p1` with the data partition device
@@ -144,9 +146,9 @@ Replace `/dev/nvme1n1p1` with the data partition device
 mkfs.ext4 -L data /dev/nvme1n1p1
 ```
 This will label it `data`
-:::tip
+```admonish tip
 Formatting the root/data partition might be a bit slower than the other partitions
-:::
+```
 
 
 ## Mount the file systems
@@ -164,6 +166,6 @@ so we can control them from the live environment.
     ```bash
     swapon /dev/sda2
     ```
-:::tip
+```admonish tip
 You probably don't need to mount the data partition when installing the system.
-:::
+```

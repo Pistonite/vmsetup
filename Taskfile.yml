@@ -12,6 +12,7 @@ tasks:
     - git clone https://github.com/Pistonight/mono-dev --depth 1
   install:
     - task: mdbook:install-theme-singlerepo
+    - cp src/icon.png theme/favicon.png
   dev:
     - mdbook build
     - mdbook watch &

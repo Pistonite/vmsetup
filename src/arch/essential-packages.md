@@ -1,16 +1,19 @@
-# Install Essential Packages
+```admonish info
 This section is 2.1-2.2 of the [Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide).
+```
 
 ## Update mirrorlist
-Run the following
+Run the following - this might take a while
 ```bash
 reflector --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 ## Install essential packages
-:::warning
-We are using `pacstrap` to install packages onto the target system, not the live environment.
-:::
+```admonish warning
+We are using `pacstrap` to install packages onto the target system,
+not the live environment.
+```
+
 ### Details
 
 | Package | Description |
@@ -24,24 +27,25 @@ We are using `pacstrap` to install packages onto the target system, not the live
 |`dkms`|Dynamic Kernel Module Support. In case you have kernel modules that need to be recompiled when the kernel is updated|
 |`amd-ucode` or `intel-ucode`|Microcode for AMD or Intel CPUs. See https://wiki.archlinux.org/title/Microcode for more info|
 |`git`|Version control system. You probably need this|
-|`neovim`|For editing files in the install process|
+|`vim`|For editing files in the install process|
 |`openssh`|SSH server|
 |`sudo`|You probably need this|
 |`networkmanager`|Network manager. The device needs to connect to internet|
 |`curl`|In case anything needs to be downloaded during the install|
 |`man-db`, `man-pages` and `texinfo` |Manual pages|
 
-:::tip
-There's no shell because `bash` is included in `base`. If you prefer another shell like `zsh`, include it
-:::
+```admonish tip
+There's no shell because `bash` is included in `base`.
+If you prefer another shell like `zsh`, include it
+```
 
 ### For AMD CPU:
 ```bash
-pacstrap -K /mnt base reflector base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git neovim openssh sudo networkmanager curl man-db man-pages texinfo
+pacstrap -K /mnt base reflector base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms amd-ucode git vim openssh sudo networkmanager curl man-db man-pages texinfo
 ```
 
 ### For Intel CPU:
 ```bash
-pacstrap -K /mnt base reflector base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git neovim openssh sudo networkmanager curl man-db man-pages texinfo
+pacstrap -K /mnt base reflector base-devel linux linux-lts linux-firmware linux-headers linux-lts-headers dkms intel-ucode git vim openssh sudo networkmanager curl man-db man-pages texinfo
 ```
 
