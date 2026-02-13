@@ -1,16 +1,21 @@
 version: '3'
 
-tasks:
-  install:
-    desc: Install dependencies and packages
-    aliases: [i]
-    cmds:
-      - pnpm i
+includes:
+  mdbook:
+    taskfile: mono-dev/task/mdbook.yaml
+    optional: true
+    internal: true
 
+tasks:
+  install-mono:
+    - rm -rf mono-dev
+    - git clone https://github.com/Pistonight/mono-dev --depth 1
+  install:
+    - task: mdbook:install-theme-singlerepo
   dev:
-    desc: Run local dev server
-    cmds:
-    - pnpm exec vitepress dev src --host
+    - mdbook build
+    - mdbook watch &
+    - live-server book -p 8081
 
   build:
     desc: Build the app locally

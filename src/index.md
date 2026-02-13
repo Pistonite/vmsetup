@@ -1,15 +1,24 @@
-# Welcome
-Welcome to the guide to setup develop/production environments exactly like the ones I use! This guide will be updated in the future if I need to install something new.
+# Machine Setup Guides
+Guides for how I setup my machines.
 
-## What I use
-- Main Workstation: Ryzen 9 5950X running Windows 11 + Arch Linux (Hyper-V)
-- Work Laptop: Surface Laptop Studio running Windows 11
-- Personal Laptop: Framework 16 running Arch Linux
-- Production: Arch Linux instance running nginx + docker
+## Main Windows Workstation
+For my personal daily driver Windows Workstation 
+(which is a powerful Desktop PC running Windows),
+I run Windows 11 Pro and use [Hyper-V](./hyperv/index.md)
+to install [Arch Linux](./arch/index.md) virtual machines,
+which I then `ssh` into to do development.
 
-## Index
-- [Setup a Windows machine](./windows/)
-- [Setup Hyper-V on a Windows machine](./hyperv/)
-- [Setup Arch Linux](./arch/)
-- [Development Tools](./tool/)
-- [Setup Production Server](./prod/)
+## Other Windows Machines
+I pretty much use vanilla Windows with only a few registry edits
+(like showing the old right click context menu).
+
+## Arch Linux Laptop
+When using Arch Linux with graphical interface,
+it's basically [Arch Linux](./arch/index.md) base installation,
+and then a bunch of configurations added on top of that
+to get a minimal, custom [Desktop Environment](./archde/index.md).
+
+## Software
+[Shaft](./shaft.md) is my personal tool for installing essential software.
+It includes configurations as well, so I can setup it up once, and use
+it in multiple machines without configuring each one.

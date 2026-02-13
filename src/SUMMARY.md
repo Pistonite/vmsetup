@@ -1,0 +1,17 @@
+# Summary
+
+- [Home](./index.md)
+- [Windows Hyper-V](./hyperv/index.md)
+  - [Creation](./hyperv/create.md)
+  - [Configuration](./hyperv/configure.md)
+- [Arch Linux](./arch/index.md)
+  - [Prepare the Image](./arch/download-iso.md)
+  - [Boot Live Environment]()
+  - [Preinstall Checks]()
+  - [Format the Disks]()
+  - [Install Essential Packages]()
+  - [Configure the System]()
+  - [Configure the Boot Loader]()
+  - [Configure the User]()
+- [Shaft](./shaft.md)
+- [Arch Linux Desktop]()
